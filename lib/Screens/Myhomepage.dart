@@ -9,10 +9,6 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-      appBar: AppBar(
-        // The title text which will be shown on the action bar
-        title: Text(title),
-      ),
       body: Center(
           child: Container(
         width: MediaQuery.of(context).size.width,
@@ -40,8 +36,32 @@ class MyHomePage extends StatelessWidget {
               ),
             ),
             Container(
+              margin: EdgeInsets.fromLTRB(0, .0, 0, 0),
               child: Image(
                 image: AssetImage('assets/login.png'),
+                width: 250.0,
+              ),
+            ),
+            Container(
+              width: 300.0,
+              child: TextFormField(
+                style: TextStyle(color: Colors.white),
+                decoration: const InputDecoration(
+                    labelText: "Nombre de usuario",
+                    enabledBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(color: Color(0xFFFFFFFF))),
+                    labelStyle: TextStyle(color: Colors.white)),
+              ),
+            ),
+            Container(
+              width: 300.0,
+              child: TextFormField(
+                style: TextStyle(color: Colors.white),
+                decoration: const InputDecoration(
+                    labelText: "Contraseña",
+                    enabledBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(color: Color(0xFFFFFFFF))),
+                    labelStyle: TextStyle(color: Colors.white)),
               ),
             )
           ],
