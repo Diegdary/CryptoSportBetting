@@ -7,10 +7,14 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    return Scaffold(
-      body: Center(
-          child: Container(
+     return GestureDetector(
+      onTap: () {
+        FocusScope.of(context).unfocus(); 
+      },
+      child: Scaffold(
+        body: SingleChildScrollView(
+          child: Center(
+            child: Container(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
         decoration: BoxDecoration(
