@@ -1,10 +1,11 @@
-import 'package:apuestas/Screens/MyHomePage.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
-import '../Screens/Myhomepage.dart';
-import '../Screens/home.dart';
-import '../Screens/config.dart';
+import '../Screens/profile.dart';
 import '../Screens/search.dart';
+import '../Screens/History.dart';
+import '../Screens/Support.dart';
+import '../Screens/wallet.dart';
+import '../Screens/Myhomepage.dart';
 
 
 class MyApp extends StatelessWidget {
@@ -22,17 +23,25 @@ class HomeScreen extends StatelessWidget {
 
   List<Widget> _buildScreens() {
     return [
-      Home(),
-      Searchpage(), 
-      ConfigScreen(), 
+      Suport(),
+      Histo(),
+      Searchpage(),
+      Wall(),
+      ProfScreen(), 
     ];
   }
 
   List<PersistentBottomNavBarItem> _navBarsItems() {
     return [
      PersistentBottomNavBarItem(
-        icon: Icon(Icons.home, color: Color(0xFF3cb4dc)), 
-        title: ("Inicio"),
+        icon: Icon(Icons.help, color: Color(0xFF3cb4dc)), 
+        title: ("Soporte"),
+        activeColorPrimary: Color(0xFF141c44), 
+        inactiveColorPrimary: Color(0xFF3cb4dc).withOpacity(0.6), 
+      ),
+      PersistentBottomNavBarItem(
+        icon: Icon(Icons.history, color: Color(0xFF3cb4dc)), 
+        title: ("Historial"),
         activeColorPrimary: Color(0xFF141c44), 
         inactiveColorPrimary: Color(0xFF3cb4dc).withOpacity(0.6), 
       ),
@@ -60,10 +69,16 @@ class HomeScreen extends StatelessWidget {
   inactiveColorPrimary: Color(0xFF3cb4dc).withOpacity(0.6),
 ),
       PersistentBottomNavBarItem(
-        icon: Icon(Icons.settings, color: Color(0xFF3cb4dc)), 
-        title: ("Configuración"),
+        icon: Icon(Icons.wallet, color: Color(0xFF3cb4dc)), 
+        title: ("Billetera"),
         activeColorPrimary: Color(0xFF141c44), 
         inactiveColorPrimary: Color(0xFF3cb4dc).withOpacity(0.6),
+      ),
+      PersistentBottomNavBarItem(
+        icon: Icon(Icons.person, color: Color(0xFF3cb4dc)), 
+        title: ("My perfil"),
+        activeColorPrimary: Color(0xFF141c44), 
+        inactiveColorPrimary: Color(0xFF3cb4dc).withOpacity(0.6), 
       ),
     ];
   }
