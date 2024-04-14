@@ -9,37 +9,8 @@ class ConfigScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text('Configuración'),
       ),
-      body: ListView(
-        children: <Widget>[
-          ListTile(
-            leading: Icon(Icons.account_circle),
-            title: Text('Cuenta'),
-            onTap: () {
-            },
-          ),
-          ListTile(
-            leading: Icon(Icons.notifications),
-            title: Text('Notificaciones'),
-            onTap: () {
-
-            },
-          ),
-          ListTile(
-            leading: Icon(Icons.lock),
-            title: Text('Privacidad'),
-            onTap: () {
-
-            },
-          ),
-          ListTile(
-            leading: Icon(Icons.help),
-            title: Text('Ayuda'),
-            onTap: () {
-
-            },
-          ),
-
-        ],
+      body: Center(
+        child: Text('Ajustes de la aplicación'),
       ),
     );
   }
