@@ -1,31 +1,69 @@
 import 'package:flutter/material.dart';
-import '../Screens/home.dart';
-import '../Screens/Myhomepage.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
+import '../Screens/Myhomepage.dart';
+import '../Screens/home.dart';
+import '../Screens/config.dart';
+
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    debugShowCheckedModeBanner:
-    false;
+    PersistentTabController _controller = PersistentTabController(initialIndex: 0);
+
+    List<Widget> _buildScreens() {
+      return [
+         const Home(),
+         const MyHomePage(title: 'Flutter Demo Home Page'),
+         const ConfigScreen(),
+        
+      ];
+    }
+
+    List<PersistentBottomNavBarItem> _navBarsItems() {
+    return [
+   
+    PersistentBottomNavBarItem(
+      icon: Icon(Icons.search),
+      title: ("Buscar"),
+      activeColorPrimary: Colors.blue,
+      inactiveColorPrimary: Colors.grey,
+    ),
+     PersistentBottomNavBarItem(
+      icon: Icon(Icons.home),
+      title: ("Inicio"),
+      activeColorPrimary: Colors.blue,
+      inactiveColorPrimary: Colors.grey,
+    ),
+   PersistentBottomNavBarItem(
+  icon: Icon(Icons.settings),
+  title: ("Configuración"),
+  activeColorPrimary: Colors.blue,
+  inactiveColorPrimary: Colors.grey,
+),
+  
+  ];
+    }
+
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Pageee'),
+      home: PersistentTabView(
+        context,
+        controller: _controller,
+        screens: _buildScreens(),
+        items: _navBarsItems(),
+        confineInSafeArea: true,
+        backgroundColor: Colors.white,
+        handleAndroidBackButtonPress: true,
+        resizeToAvoidBottomInset: true,
+        stateManagement: true,
+        hideNavigationBarWhenKeyboardShows: true,
+        navBarStyle: NavBarStyle.style15, 
+      ),
     );
   }
 }
