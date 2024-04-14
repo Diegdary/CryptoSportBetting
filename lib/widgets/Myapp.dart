@@ -34,23 +34,23 @@ class HomeScreen extends StatelessWidget {
         icon: Icon(Icons.home, color: Color(0xFF3cb4dc)), 
         title: ("Inicio"),
         activeColorPrimary: Color(0xFF141c44), 
-        inactiveColorPrimary: Color(0xFF3cb4dc).withOpacity(0.6), // Color de ícono inactivo más oscuro
+        inactiveColorPrimary: Color(0xFF3cb4dc).withOpacity(0.6), 
       ),
       PersistentBottomNavBarItem(
   icon: Container(
     decoration: BoxDecoration(
-      color: Color(0xFF3cb4dc), // Color del círculo
+      color: Color(0xFF3cb4dc), 
       shape: BoxShape.circle,
     ),
     child: Padding(
-      padding: EdgeInsets.all(4), // Espaciado para el círculo exterior
+      padding: EdgeInsets.all(4),
       child: Container(
         decoration: BoxDecoration(
-          color: Color(0xFF3cb4dc), // Color del círculo interior
+          color: Color(0xFF3cb4dc), 
           shape: BoxShape.circle,
         ),
         child: Center(
-          child: Icon(Icons.attach_money, color: Color(0xFF141c44)), // Símbolo de dólar
+          child: Icon(Icons.attach_money, color: Color(0xFF141c44)), 
         ),
       ),
     ),
@@ -60,10 +60,10 @@ class HomeScreen extends StatelessWidget {
   inactiveColorPrimary: Color(0xFF3cb4dc).withOpacity(0.6),
 ),
       PersistentBottomNavBarItem(
-        icon: Icon(Icons.settings, color: Color(0xFF3cb4dc)), // Color de ícono actualizado
+        icon: Icon(Icons.settings, color: Color(0xFF3cb4dc)), 
         title: ("Configuración"),
-        activeColorPrimary: Color(0xFF141c44), // Color de barra activa actualizado
-        inactiveColorPrimary: Color(0xFF3cb4dc).withOpacity(0.6), // Color de ícono inactivo más oscuro
+        activeColorPrimary: Color(0xFF141c44), 
+        inactiveColorPrimary: Color(0xFF3cb4dc).withOpacity(0.6),
       ),
     ];
   }
@@ -96,7 +96,7 @@ class HomeScreen extends StatelessWidget {
         curve: Curves.ease,
         duration: Duration(milliseconds: 200),
       ),
-      navBarStyle: NavBarStyle.style15, // Elige el estilo aquí
+      navBarStyle: NavBarStyle.style15, 
     );
   }
 }
