@@ -29,13 +29,11 @@ class Home extends StatelessWidget {
       PersistentBottomNavBarItem(
         icon: Icon(Icons.home, color: Color(0xFF3cb4dc)),
         title: ("Home"),
-        activeColorPrimary: Color(0xFF141c44),
         inactiveColorPrimary: Color(0xFF3cb4dc).withOpacity(0.6),
       ),
       PersistentBottomNavBarItem(
         icon: Icon(Icons.help, color: Color(0xFF3cb4dc)),
         title: ("Soporte"),
-        activeColorPrimary: Color(0xFF141c44),
         inactiveColorPrimary: Color(0xFF3cb4dc).withOpacity(0.6),
       ),
       PersistentBottomNavBarItem(
@@ -58,19 +56,16 @@ class Home extends StatelessWidget {
           ),
         ),
         title: ("APOSTAR"),
-        activeColorPrimary: Color(0xFF141c44),
         inactiveColorPrimary: Color(0xFF3cb4dc).withOpacity(0.6),
       ),
       PersistentBottomNavBarItem(
         icon: Icon(Icons.wallet, color: Color(0xFF3cb4dc)),
         title: ("Billetera"),
-        activeColorPrimary: Color(0xFF141c44),
         inactiveColorPrimary: Color(0xFF3cb4dc).withOpacity(0.6),
       ),
       PersistentBottomNavBarItem(
         icon: Icon(Icons.person, color: Color(0xFF3cb4dc)),
         title: ("My perfil"),
-        activeColorPrimary: Color(0xFF141c44),
         inactiveColorPrimary: Color(0xFF3cb4dc).withOpacity(0.6),
       ),
     ];
