@@ -6,6 +6,8 @@ import '../Screens/Support.dart';
 import '../Screens/wallet.dart';
 import '../Screens/HomeContent.dart';
 
+bool _isModalOpen = false;
+
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
 
@@ -17,6 +19,7 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   late PersistentTabController _controller;
+  bool _isModalOpen = false;
 
   @override
   void initState() {
@@ -51,7 +54,9 @@ class _HomeState extends State<Home> {
         title: "APOSTAR",
         inactiveColorPrimary: Color(0xFF3cb4dc).withOpacity(0.6),
         onPressed: (context) {
-          _showModalBottomSheet(context!);
+          if (context != null) {
+            _showModalBottomSheet(context);
+          }
         },
       ),
       PersistentBottomNavBarItem(
@@ -68,15 +73,31 @@ class _HomeState extends State<Home> {
   }
 
   void _showModalBottomSheet(BuildContext context) {
-    showModalBottomSheet(
-      context: context,
-      isScrollControlled: true,
-      enableDrag: true,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
-      ),
-      builder: (context) => buildsheet(),
-    );
+    if (!_isModalOpen) {
+      setState(() {
+        _isModalOpen = true;
+      });
+      showModalBottomSheet(
+        context: context,
+        isScrollControlled: true,
+        enableDrag: true,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+        ),
+        builder: (context) => buildsheet(),
+      ).whenComplete(() {
+        setState(() {
+          _isModalOpen = false;
+        });
+      });
+    } else {
+      if (Navigator.of(context).canPop()) {
+        Navigator.of(context).pop();
+      }
+      setState(() {
+        _isModalOpen = false;
+      });
+    }
   }
 
   Widget buildsheet() => DraggableScrollableSheet(
