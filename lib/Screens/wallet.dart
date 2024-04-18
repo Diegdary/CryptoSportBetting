@@ -34,13 +34,24 @@ class Wall extends StatelessWidget {
                         fontSize: 40,
                         fontWeight: FontWeight.bold,
                       ),
-                      textAlign: TextAlign.center,
+                     textAlign: TextAlign.center,
                     ),
                   ),
-                  SizedBox(height: 150),
+                  Spacer(),
+                  
+                  Text(
+                    'Balance: \$10.00', // Texto del balance añadido
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  Spacer(),
+                 // Espacio antes del botón de depósito
                   Container(
-                    height: 70.0,
-                    width: 400.0,
+                    height: 50.0,
+                    width: 300.0,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.all(Radius.circular(50)),
                     ),
@@ -51,14 +62,14 @@ class Wall extends StatelessWidget {
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Color.fromARGB(255, 1, 29, 101),
                       ),
-                      child: Text("Depósito", style: TextStyle(fontSize: 23)),
+                      child: Text("Depósito", style: TextStyle(fontSize: 23, color: Color.fromARGB(255, 136, 247, 228),)),
                     ),
                   ),
-                  SizedBox(height: 10), // Espacio entre botones
+                  SizedBox(height: 10), 
 
                   Container(
-                    height: 70.0,
-                    width: 400.0,
+                    height: 50.0,
+                    width: 300.0,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.all(Radius.circular(50)),
                     ),
@@ -69,9 +80,10 @@ class Wall extends StatelessWidget {
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Color.fromARGB(255, 1, 29, 101),
                       ),
-                      child: Text("Retiro", style: TextStyle(fontSize: 23)),
+                      child: Text("Retiro", style: TextStyle(fontSize: 23, color: Color.fromARGB(255, 136, 247, 228),)),
                     ),
                   ),
+                  Spacer(flex:2),
                   // ... Otros widgets ...
                 ],
               ),
