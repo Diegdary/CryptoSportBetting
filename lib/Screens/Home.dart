@@ -1,24 +1,34 @@
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 import '../Screens/profile.dart';
-import '../Screens/search.dart';
 import '../Screens/History.dart';
 import '../Screens/Support.dart';
 import '../Screens/wallet.dart';
 import '../Screens/HomeContent.dart';
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
 
   static const String routName = "Home";
-  static PersistentTabController _controller =
-      PersistentTabController(initialIndex: 0);
+
+  @override
+  _HomeState createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  late PersistentTabController _controller;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = PersistentTabController(initialIndex: 0);
+  }
 
   List<Widget> _buildScreens() {
     return [
       HomeContent(),
       Suport(),
-      Searchpage(),
+      Container(),
       Wall(),
       ProfScreen(),
     ];
@@ -28,48 +38,63 @@ class Home extends StatelessWidget {
     return [
       PersistentBottomNavBarItem(
         icon: Icon(Icons.home, color: Color(0xFF3cb4dc)),
-        title: ("Home"),
+        title: "Home",
         inactiveColorPrimary: Color(0xFF3cb4dc).withOpacity(0.6),
       ),
       PersistentBottomNavBarItem(
         icon: Icon(Icons.help, color: Color(0xFF3cb4dc)),
-        title: ("Soporte"),
+        title: "Soporte",
         inactiveColorPrimary: Color(0xFF3cb4dc).withOpacity(0.6),
       ),
       PersistentBottomNavBarItem(
-        icon: Container(
-          decoration: BoxDecoration(
-            color: Color(0xFF3cb4dc),
-            shape: BoxShape.circle,
-          ),
-          child: Padding(
-            padding: EdgeInsets.all(4),
-            child: Container(
-              decoration: BoxDecoration(
-                color: Color(0xFF3cb4dc),
-                shape: BoxShape.circle,
-              ),
-              child: Center(
-                child: Icon(Icons.attach_money, color: Color(0xFF141c44)),
-              ),
-            ),
-          ),
-        ),
-        title: ("APOSTAR"),
+        icon: Icon(Icons.attach_money, color: Color(0xFF3cb4dc)),
+        title: "APOSTAR",
         inactiveColorPrimary: Color(0xFF3cb4dc).withOpacity(0.6),
+        onPressed: (context) {
+          _showModalBottomSheet(context!);
+        },
       ),
       PersistentBottomNavBarItem(
         icon: Icon(Icons.wallet, color: Color(0xFF3cb4dc)),
-        title: ("Billetera"),
+        title: "Billetera",
         inactiveColorPrimary: Color(0xFF3cb4dc).withOpacity(0.6),
       ),
       PersistentBottomNavBarItem(
         icon: Icon(Icons.person, color: Color(0xFF3cb4dc)),
-        title: ("My perfil"),
+        title: "Mi perfil",
         inactiveColorPrimary: Color(0xFF3cb4dc).withOpacity(0.6),
       ),
     ];
   }
+
+  void _showModalBottomSheet(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      enableDrag: true,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+      ),
+      builder: (context) => buildsheet(),
+    );
+  }
+
+  Widget buildsheet() => DraggableScrollableSheet(
+        initialChildSize: 0.7,
+        builder: (_, controller) => Container(
+          color: Colors.white,
+          padding: EdgeInsets.all(16),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                "Contenido de la hoja inferior",
+                style: TextStyle(fontSize: 24),
+              ),
+            ],
+          ),
+        ),
+      );
 
   @override
   Widget build(BuildContext context) {
