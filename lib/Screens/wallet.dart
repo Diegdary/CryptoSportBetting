@@ -41,7 +41,8 @@ class Wall extends StatelessWidget {
                   Spacer(),
                   Container(
                       child: Row
-                      (mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      (
+                        mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
                         'Balance: \$10.00',
@@ -50,6 +51,9 @@ class Wall extends StatelessWidget {
                           fontSize: 24,
                           fontWeight: FontWeight.bold,
                         ),
+                      ),
+                      SizedBox(
+                        width: 20,
                       ),
                       Container(
                         width:30,
