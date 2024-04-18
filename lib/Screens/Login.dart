@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key, required this.title});
+class Login extends StatelessWidget {
+  const Login({super.key, required this.title});
 
   final String title;
 
@@ -13,7 +13,7 @@ class MyHomePage extends StatelessWidget {
       },
       child: Scaffold(
         body: Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             gradient: LinearGradient(
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
@@ -32,7 +32,7 @@ class MyHomePage extends StatelessWidget {
                   children: [
                     Container(
                       margin: EdgeInsets.fromLTRB(0, 55.0, 0, 0),
-                      child: Text(
+                      child: const Text(
                         "Bienvenido",
                         style: TextStyle(
                             color: Colors.white,
@@ -42,7 +42,7 @@ class MyHomePage extends StatelessWidget {
                     ),
                     Container(
                       margin: EdgeInsets.fromLTRB(0, 30.0, 0, 0),
-                      child: Image(
+                      child: const Image(
                         image: AssetImage('assets/login.png'),
                         width: 250.0,
                       ),
@@ -69,6 +69,33 @@ class MyHomePage extends StatelessWidget {
                                 borderSide:
                                     BorderSide(color: Color(0xFFFFFFFF))),
                             labelStyle: TextStyle(color: Colors.white)),
+                      ),
+                    ),
+                    Container(
+                      margin: const EdgeInsets.fromLTRB(0, 40.0, 0, 0),
+                      height: 50.0,
+                      width: 300.0,
+                      decoration: BoxDecoration(
+                          border: Border.all(),
+                          borderRadius:
+                              const BorderRadius.all(Radius.circular(50)),
+                          gradient: const LinearGradient(
+                            colors: [Color(0xFF3ec2e4), Color(0xFF295faa)],
+                          )),
+                      child: ElevatedButton(
+                        onPressed: () {},
+                        style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.transparent,
+                            shadowColor: Colors.transparent),
+                        child: const Text("Iniciar sesión",
+                            style: TextStyle(fontSize: 16)),
+                      ),
+                    ),
+                    Container(
+                      margin: const EdgeInsets.fromLTRB(0, 30.0, 0, 0),
+                      child: Text(
+                        "Ayuda",
+                        style: TextStyle(color: Color(0xFFAAAAAA)),
                       ),
                     )
                   ],
