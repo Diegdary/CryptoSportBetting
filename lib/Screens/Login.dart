@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:apuestas/Screens/Home.dart';
 
 class Login extends StatelessWidget {
   const Login({super.key, required this.title});
-
+  static const String routName = "Login";
   final String title;
 
   @override
@@ -83,7 +84,10 @@ class Login extends StatelessWidget {
                             colors: [Color(0xFF3ec2e4), Color(0xFF295faa)],
                           )),
                       child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushReplacementNamed(
+                              context, Home.routName);
+                        },
                         style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.transparent,
                             shadowColor: Colors.transparent),

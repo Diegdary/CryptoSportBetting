@@ -9,6 +9,7 @@ import '../Screens/wallet.dart';
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
 
+  static const String routName = "Home";
   static PersistentTabController _controller =
       PersistentTabController(initialIndex: 0);
 
