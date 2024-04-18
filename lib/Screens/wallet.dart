@@ -31,7 +31,7 @@ class Wall extends StatelessWidget {
                       'Billetera',
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: 40,
+                        fontSize: 30,
                         fontWeight: FontWeight.bold,
                       ),
                      textAlign: TextAlign.center,
@@ -40,7 +40,7 @@ class Wall extends StatelessWidget {
                   Spacer(),
                   
                   Text(
-                    'Balance: \$10.00', // Texto del balance añadido
+                    'Balance: \$10.00', 
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 24,
@@ -48,7 +48,6 @@ class Wall extends StatelessWidget {
                     ),
                   ),
                   Spacer(),
-                 // Espacio antes del botón de depósito
                   Container(
                     height: 50.0,
                     width: 300.0,
@@ -84,7 +83,6 @@ class Wall extends StatelessWidget {
                     ),
                   ),
                   Spacer(flex:2),
-                  // ... Otros widgets ...
                 ],
               ),
             ),
