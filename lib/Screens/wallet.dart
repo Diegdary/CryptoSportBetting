@@ -61,7 +61,7 @@ class Wall extends StatelessWidget {
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Color.fromARGB(255, 1, 29, 101),
                       ),
-                      child: Text("Depósito", style: TextStyle(fontSize: 23, color: Color.fromARGB(255, 136, 247, 228),)),
+                      child: Text("Depósitar", style: TextStyle(fontSize: 23, color: Color.fromARGB(255, 136, 247, 228),)),
                     ),
                   ),
                   SizedBox(height: 10), 
@@ -79,7 +79,7 @@ class Wall extends StatelessWidget {
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Color.fromARGB(255, 1, 29, 101),
                       ),
-                      child: Text("Retiro", style: TextStyle(fontSize: 23, color: Color.fromARGB(255, 136, 247, 228),)),
+                      child: Text("Retirar", style: TextStyle(fontSize: 23, color: Color.fromARGB(255, 136, 247, 228),)),
                     ),
                   ),
                   Spacer(flex:2),

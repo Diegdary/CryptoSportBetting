@@ -15,10 +15,10 @@ class Histo extends StatelessWidget {
     );
 //color de los titulos
     final titleTextStyle =
-        TextStyle(color: Color.fromARGB(255, 136, 247, 228), fontSize: 13);
+        TextStyle(color: Color.fromARGB(255, 136, 247, 228), fontSize: 10);
     //color titulos auxiliares
     final smallTitleTextStyle =
-        TextStyle(color: Color.fromARGB(255, 255, 255, 255), fontSize: 9);
+        TextStyle(color: Color.fromARGB(255, 255, 255, 255), fontSize: 7);
     //separador de las testos
     final separator = Container(
       height: 25,
@@ -48,15 +48,15 @@ class Histo extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              fixedWidthText('10/05/2022', smallTitleTextStyle, 90),
+              fixedWidthText('10/05/2022', smallTitleTextStyle, 60),
               separator,
-              fixedWidthText('millonarios vs junior', smallTitleTextStyle, 100),
+              fixedWidthText('millonarios vs junior', smallTitleTextStyle, 70),
               separator,
-              fixedWidthText('millonarios', smallTitleTextStyle, 70),
+              fixedWidthText('millonarios', smallTitleTextStyle, 50),
               separator,
-              fixedWidthText('gana', smallTitleTextStyle, 50),
+              fixedWidthText('gana', smallTitleTextStyle, 40),
               separator,
-              fixedWidthText('1000000', smallTitleTextStyle, 80),
+              fixedWidthText('1000000', smallTitleTextStyle, 40),
             ],
           ),
         ),
@@ -95,15 +95,15 @@ class Histo extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        fixedWidthText('Fecha apuesta', titleTextStyle, 90),
+                        fixedWidthText('Fecha apuesta', titleTextStyle, 60),
                         separator,
-                        fixedWidthText('Juego', titleTextStyle, 100),
+                        fixedWidthText('Juego', titleTextStyle, 70),
                         separator,
-                        fixedWidthText('Apuesta', titleTextStyle, 70),
+                        fixedWidthText('Apuesta', titleTextStyle, 50),
                         separator,
-                        fixedWidthText('Estado Apuesta', titleTextStyle, 50),
+                        fixedWidthText('Estado Apuesta', titleTextStyle, 40),
                         separator,
-                        fixedWidthText('Ganancias', titleTextStyle, 80),
+                        fixedWidthText('Saldo', titleTextStyle, 40),
                       ],
                     ),
                   ),
