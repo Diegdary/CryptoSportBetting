@@ -30,7 +30,7 @@ class _HomeState extends State<Home> {
   List<Widget> _buildScreens() {
     return [
       HomeContent(),
-      Histo(),
+      Suport(),
       Container(),
       Wall(),
       ProfScreen(),

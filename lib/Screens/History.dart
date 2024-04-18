@@ -14,9 +14,11 @@ class Histo extends StatelessWidget {
       ],
     );
 //color de los titulos
-    final titleTextStyle = TextStyle(color: Color.fromARGB(255, 136, 247, 228), fontSize: 13);
+    final titleTextStyle =
+        TextStyle(color: Color.fromARGB(255, 136, 247, 228), fontSize: 13);
     //color titulos auxiliares
-    final smallTitleTextStyle = TextStyle(color: Color.fromARGB(255, 255, 255, 255), fontSize: 9);
+    final smallTitleTextStyle =
+        TextStyle(color: Color.fromARGB(255, 255, 255, 255), fontSize: 9);
     //separador de las testos
     final separator = Container(
       height: 25,
@@ -28,8 +30,8 @@ class Histo extends StatelessWidget {
     Widget fixedWidthText(String text, TextStyle style, double width) {
       return Container(
         width: width,
-        alignment: Alignment.center,  
-         child: Text(text, style: style, textAlign: TextAlign.center),
+        alignment: Alignment.center,
+        child: Text(text, style: style, textAlign: TextAlign.center),
       );
     }
 
@@ -46,15 +48,15 @@ class Histo extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              fixedWidthText('10/05/2022', smallTitleTextStyle, 90), 
+              fixedWidthText('10/05/2022', smallTitleTextStyle, 90),
               separator,
-              fixedWidthText('millonarios vs junior', smallTitleTextStyle, 100), 
+              fixedWidthText('millonarios vs junior', smallTitleTextStyle, 100),
               separator,
-              fixedWidthText('millonarios', smallTitleTextStyle, 70), 
+              fixedWidthText('millonarios', smallTitleTextStyle, 70),
               separator,
-              fixedWidthText('gana', smallTitleTextStyle, 50), 
+              fixedWidthText('gana', smallTitleTextStyle, 50),
               separator,
-              fixedWidthText('1000000', smallTitleTextStyle, 80), 
+              fixedWidthText('1000000', smallTitleTextStyle, 80),
             ],
           ),
         ),
@@ -95,23 +97,23 @@ class Histo extends StatelessWidget {
                       children: [
                         fixedWidthText('Fecha apuesta', titleTextStyle, 90),
                         separator,
-                        fixedWidthText('Juego', titleTextStyle, 100), 
+                        fixedWidthText('Juego', titleTextStyle, 100),
                         separator,
-                        fixedWidthText('Apuesta', titleTextStyle, 70), 
+                        fixedWidthText('Apuesta', titleTextStyle, 70),
                         separator,
-                        fixedWidthText('Estado Apuesta', titleTextStyle, 50), 
+                        fixedWidthText('Estado Apuesta', titleTextStyle, 50),
                         separator,
                         fixedWidthText('Ganancias', titleTextStyle, 80),
                       ],
                     ),
                   ),
                 ),
-                 SizedBox(height: 20),
+                SizedBox(height: 20),
                 Expanded(
                   child: ListView.builder(
-                    itemCount: 6,
+                    itemCount: 14,
                     itemBuilder: (BuildContext context, int index) {
-                      return textRow(); 
+                      return textRow();
                     },
                   ),
                 ),
