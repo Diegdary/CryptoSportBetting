@@ -5,6 +5,7 @@ import '../Screens/search.dart';
 import '../Screens/History.dart';
 import '../Screens/Support.dart';
 import '../Screens/wallet.dart';
+import '../Screens/HomeContent.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -15,8 +16,8 @@ class Home extends StatelessWidget {
 
   List<Widget> _buildScreens() {
     return [
+      HomeContent(),
       Suport(),
-      Histo(),
       Searchpage(),
       Wall(),
       ProfScreen(),
@@ -26,14 +27,14 @@ class Home extends StatelessWidget {
   List<PersistentBottomNavBarItem> _navBarsItems() {
     return [
       PersistentBottomNavBarItem(
-        icon: Icon(Icons.help, color: Color(0xFF3cb4dc)),
-        title: ("Soporte"),
+        icon: Icon(Icons.home, color: Color(0xFF3cb4dc)),
+        title: ("Home"),
         activeColorPrimary: Color(0xFF141c44),
         inactiveColorPrimary: Color(0xFF3cb4dc).withOpacity(0.6),
       ),
       PersistentBottomNavBarItem(
-        icon: Icon(Icons.history, color: Color(0xFF3cb4dc)),
-        title: ("Historial"),
+        icon: Icon(Icons.help, color: Color(0xFF3cb4dc)),
+        title: ("Soporte"),
         activeColorPrimary: Color(0xFF141c44),
         inactiveColorPrimary: Color(0xFF3cb4dc).withOpacity(0.6),
       ),
