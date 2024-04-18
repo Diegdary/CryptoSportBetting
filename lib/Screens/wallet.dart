@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class Wall extends StatelessWidget {
   const Wall({Key? key}) : super(key: key);
@@ -34,19 +35,29 @@ class Wall extends StatelessWidget {
                         fontSize: 30,
                         fontWeight: FontWeight.bold,
                       ),
-                     textAlign: TextAlign.center,
+                      textAlign: TextAlign.center,
                     ),
                   ),
                   Spacer(),
-                  
-                  Text(
-                    'Balance: \$10.00', 
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
+                  Container(
+                      child: Row
+                      (mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Text(
+                        'Balance: \$10.00',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Container(
+                        width:30,
+                        height: 30,
+                        child: Image.asset('assets/token.png'),
+                      )
+                    ],
+                  )),
                   Spacer(),
                   Container(
                     height: 50.0,
@@ -61,11 +72,14 @@ class Wall extends StatelessWidget {
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Color.fromARGB(255, 1, 29, 101),
                       ),
-                      child: Text("Depósito", style: TextStyle(fontSize: 23, color: Color.fromARGB(255, 136, 247, 228),)),
+                      child: Text("Depósito",
+                          style: TextStyle(
+                            fontSize: 23,
+                            color: Color.fromARGB(255, 136, 247, 228),
+                          )),
                     ),
                   ),
-                  SizedBox(height: 10), 
-
+                  SizedBox(height: 10),
                   Container(
                     height: 50.0,
                     width: 300.0,
@@ -79,10 +93,14 @@ class Wall extends StatelessWidget {
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Color.fromARGB(255, 1, 29, 101),
                       ),
-                      child: Text("Retiro", style: TextStyle(fontSize: 23, color: Color.fromARGB(255, 136, 247, 228),)),
+                      child: Text("Retiro",
+                          style: TextStyle(
+                            fontSize: 23,
+                            color: Color.fromARGB(255, 136, 247, 228),
+                          )),
                     ),
                   ),
-                  Spacer(flex:2),
+                  Spacer(flex: 2),
                 ],
               ),
             ),
