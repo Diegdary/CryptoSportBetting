@@ -5,6 +5,7 @@ import '../Screens/History.dart';
 import '../Screens/Support.dart';
 import '../Screens/wallet.dart';
 import '../Screens/HomeContent.dart';
+import 'betscreen.dart';
 
 bool _isModalOpen = false;
 
@@ -81,10 +82,11 @@ class _HomeState extends State<Home> {
         context: context,
         isScrollControlled: true,
         enableDrag: true,
+        backgroundColor: Color.fromARGB(255, 44, 58, 106),//aqui
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
         ),
-        builder: (context) => buildsheet(),
+        builder: (context) => bestscreen(),
       ).whenComplete(() {
         setState(() {
           _isModalOpen = false;
