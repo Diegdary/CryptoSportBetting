@@ -17,12 +17,12 @@ class retiro extends StatelessWidget {
                 "Retiro",
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontSize: 35,
+                    fontSize: 25,
                     color: Colors.white),
               ),
             ),
             SizedBox(
-              height: 20,
+              height: 10,
             ),
             Container(
               child: Column(
@@ -37,6 +37,7 @@ class retiro extends StatelessWidget {
                         color: Color.fromARGB(255, 135, 251, 242)),
                   )),
                   Container(
+                    height: 35,
                     child: TextField(
                       obscureText: false,
                       decoration: InputDecoration(
@@ -56,6 +57,7 @@ class retiro extends StatelessWidget {
                         color: Color.fromARGB(255, 135, 251, 242)),
                   )),
                   Container(
+                    height: 35,
                     child: TextField(
                       obscureText: false,
                       decoration: InputDecoration(
@@ -94,8 +96,8 @@ class retiro extends StatelessWidget {
                               borderRadius: BorderRadius.circular(20)),
                         ),
                         Container(
-                          height: 40,
-                          width: 40,
+                          height: 30,
+                          width: 30,
                           child: Image.asset("assets/token.png"),
                         ),
                       ],
@@ -114,6 +116,7 @@ class retiro extends StatelessWidget {
                   color: Color.fromARGB(255, 135, 251, 242)),
             )),
             Container(
+              height: 35,
                     child: TextField(
                       obscureText: false,
                       decoration: InputDecoration(
@@ -136,12 +139,12 @@ class retiro extends StatelessWidget {
               height: 20,
             ),
             Container(
-              height: 150,
-              width: 150,
+              height: 60,
+              width: 60,
               child: Image.asset('assets/qr.jpg'),
             ),
             Container(
-              height: 20,
+              height: 10,
             ),
             Container(
             width: 350,
