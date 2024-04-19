@@ -89,7 +89,7 @@ class bestscreen extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: 30,
+                  height: 20,
                 ),
                 Container(
                   //CONTAINER DE LA CAJA DE LA APUESTA 2
@@ -151,7 +151,7 @@ class bestscreen extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: 30,
+                  height: 20,
                 ),
                 Container(
                   //CONTAINER DE LA CAJA DE LA APUESTA 3
@@ -216,7 +216,7 @@ class bestscreen extends StatelessWidget {
             ),
           ),
           const SizedBox(
-            height: 30,
+            height: 20,
           ),
           Container(
             height: 60,
@@ -280,7 +280,7 @@ class bestscreen extends StatelessWidget {
             height: 10,
           ),
           Container(
-            height: 60,
+            height: 40,
             width: double.infinity,
             decoration: BoxDecoration(
               color: Color.fromARGB(255, 16, 27, 66),
@@ -298,6 +298,7 @@ class bestscreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Container(
+                 
                   child: Text(
                     "Ganancia:",
                     style: TextStyle(
@@ -308,6 +309,7 @@ class bestscreen extends StatelessWidget {
                   ),
                 ),
                 Container(
+                 
                   child: Text(
                     "133500",
                     style: TextStyle(
