@@ -19,7 +19,7 @@ class bestscreen extends StatelessWidget {
             style: TextStyle(
               color: Colors.white,
               fontWeight: FontWeight.bold,
-              fontSize: 15,
+              fontSize: 25,
             ),
           ),
           SizedBox(
@@ -272,7 +272,7 @@ class bestscreen extends StatelessWidget {
               "Multiplicador 2.67",
               style: TextStyle(
                   fontWeight: FontWeight.bold,
-                  fontSize: 25,
+                  fontSize: 20,
                   color: Color.fromARGB(255, 135, 251, 242)),
             ),
           ),

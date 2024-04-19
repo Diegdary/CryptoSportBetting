@@ -78,7 +78,7 @@ class Wall extends StatelessWidget {
                       child: Text("Depósito",
                           style: TextStyle(
                             fontSize: 23,
-                            color: Color.fromARGB(255, 136, 247, 228),
+                            color:  Color.fromARGB(255, 135, 251, 242),
                           )),
                     ),
                   ),
@@ -108,7 +108,7 @@ class Wall extends StatelessWidget {
                       child: Text("Retiro",
                           style: TextStyle(
                             fontSize: 23,
-                            color: Color.fromARGB(255, 136, 247, 228),
+                            color:  Color.fromARGB(255, 135, 251, 242),
                           )),
                     ),
                   ),
