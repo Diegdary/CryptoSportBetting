@@ -6,9 +6,6 @@ class HomeContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('pagina de buscar'),
-      ),
       body: Center(
         child: Text('Home page!!'),
       ),

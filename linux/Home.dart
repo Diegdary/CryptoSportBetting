@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
-import '../Screens/profile.dart';
-import '../Screens/History.dart';
-import '../Screens/Support.dart';
-import '../Screens/wallet.dart';
-import '../Screens/HomeContent.dart';
+import 'package:apuestas/Screens/profile.dart';
+import 'package:apuestas/Screens/History.dart';
+import 'package:apuestas/Screens/Support.dart';
+import 'package:apuestas/Screens/wallet.dart';
+import 'package:apuestas/Screens/HomeContent.dart';
 
 bool _isModalOpen = false;
 
