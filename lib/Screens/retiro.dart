@@ -12,7 +12,7 @@ class retiro extends StatelessWidget {
       child: SizedBox(
         width: double.infinity,
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
               child: Text(
@@ -44,9 +44,11 @@ class retiro extends StatelessWidget {
                 ],
               ),
             )
+            
           ],
         ),
       ),
+      
     );
   }
 }
