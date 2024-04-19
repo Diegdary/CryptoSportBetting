@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-
+import 'retiro.dart';
 class Wall extends StatelessWidget {
   const Wall({Key? key}) : super(key: key);
 
@@ -40,9 +40,8 @@ class Wall extends StatelessWidget {
                   ),
                   Spacer(),
                   Container(
-                      child: Row
-                      (
-                        mainAxisAlignment: MainAxisAlignment.center,
+                      child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
                         'Balance: \$10.00',
@@ -56,7 +55,7 @@ class Wall extends StatelessWidget {
                         width: 20,
                       ),
                       Container(
-                        width:30,
+                        width: 30,
                         height: 30,
                         child: Image.asset('assets/token.png'),
                       )
@@ -91,9 +90,18 @@ class Wall extends StatelessWidget {
                       borderRadius: BorderRadius.all(Radius.circular(50)),
                     ),
                     child: ElevatedButton(
-                      onPressed: () {
-                        // TODO: Agregar funcionalidad de retiro
-                      },
+                      onPressed: () => showModalBottomSheet(
+                        context: context,
+                        isScrollControlled: true,
+                        enableDrag: true,
+                        backgroundColor:
+                                    Color.fromARGB(255, 44, 58, 106), //aqui
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.vertical(
+                                      top: Radius.circular(20)),
+                                ),
+                                builder: (context) => retiro(),
+                      ),
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Color.fromARGB(255, 1, 29, 101),
                       ),
