@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'History.dart';
 
 class ProfScreen extends StatefulWidget {
   const ProfScreen({Key? key}) : super(key: key);
@@ -193,7 +194,18 @@ class _ProfScreenState extends State<ProfScreen> {
                                   ],
                                 )),
                             child: ElevatedButton(
-                              onPressed: () {},
+                              onPressed: () => showModalBottomSheet(
+                                context: context,
+                                isScrollControlled: true,
+                                enableDrag: true,
+                                backgroundColor:
+                                    Color.fromARGB(255, 44, 58, 106), //aqui
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.vertical(
+                                      top: Radius.circular(20)),
+                                ),
+                                builder: (context) => Histo(),
+                              ),
                               style: ElevatedButton.styleFrom(
                                   backgroundColor: Colors.transparent,
                                   shadowColor: Colors.transparent),
