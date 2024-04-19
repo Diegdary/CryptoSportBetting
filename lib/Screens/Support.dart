@@ -14,7 +14,6 @@ class Suport extends StatelessWidget {
       ],
     );
 
- 
     return Container(
       decoration: BoxDecoration(
         gradient: appGradient,
@@ -23,7 +22,6 @@ class Suport extends StatelessWidget {
         backgroundColor: Colors.transparent,
         body: Stack(
           children: <Widget>[
-            // Texto "Soporte" en el fondo
             Align(
               alignment: Alignment.topCenter,
               child: Padding(
@@ -37,7 +35,6 @@ class Suport extends StatelessWidget {
                   ),
                 ),
               ),
-              
             ),
             Center(
               child: Container(
@@ -50,7 +47,6 @@ class Suport extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: <Widget>[
-                    // Texto "Chat" en la parte superior del cuadro del chat
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
@@ -76,8 +72,9 @@ class Suport extends StatelessWidget {
     );
   }
 }
+
 class ChatVisual extends StatefulWidget {
-   @override
+  @override
   _ChatVisualState createState() => _ChatVisualState();
 }
 
@@ -85,7 +82,6 @@ class _ChatVisualState extends State<ChatVisual> {
   final List<Mensaje> mensajes = [
     Mensaje(texto: "Hola, ¿cómo puedo ayudarte?", esSoporte: true),
     Mensaje(texto: "Ayuda perdi todo mi dinero", esSoporte: false),
-    // Agrega más mensajes aquí si lo deseas
   ];
 
   @override
@@ -98,17 +94,22 @@ class _ChatVisualState extends State<ChatVisual> {
             itemBuilder: (context, index) {
               final mensaje = mensajes[index];
               return Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0),
+                padding: const EdgeInsets.symmetric(
+                    horizontal: 15.0, vertical: 10.0),
                 child: Row(
-                  mainAxisAlignment: mensaje.esSoporte ? MainAxisAlignment.start : MainAxisAlignment.end,
+                  mainAxisAlignment: mensaje.esSoporte
+                      ? MainAxisAlignment.start
+                      : MainAxisAlignment.end,
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     if (mensaje.esSoporte) ...[
-                      Icon(Icons.support_agent, color: Colors.blue), // Ícono para soporte
+                      Icon(Icons.support_agent, color: Colors.blue),
                       SizedBox(width: 8.0),
                     ],
                     Column(
-                      crossAxisAlignment: mensaje.esSoporte ? CrossAxisAlignment.start : CrossAxisAlignment.end,
+                      crossAxisAlignment: mensaje.esSoporte
+                          ? CrossAxisAlignment.start
+                          : CrossAxisAlignment.end,
                       children: [
                         Text(
                           mensaje.esSoporte ? 'Soporte' : 'Usuario',
@@ -116,7 +117,9 @@ class _ChatVisualState extends State<ChatVisual> {
                         ),
                         Container(
                           decoration: BoxDecoration(
-                            color: mensaje.esSoporte ? Colors.blue[300] : Colors.grey[200],
+                            color: mensaje.esSoporte
+                                ? Colors.blue[300]
+                                : Colors.grey[200],
                             borderRadius: BorderRadius.circular(5.0),
                           ),
                           child: Padding(
@@ -128,7 +131,7 @@ class _ChatVisualState extends State<ChatVisual> {
                     ),
                     if (!mensaje.esSoporte) ...[
                       SizedBox(width: 8.0),
-                      Icon(Icons.person, color: Colors.blue), // Ícono para el usuario
+                      Icon(Icons.person, color: Colors.blue),
                     ],
                   ],
                 ),
@@ -146,8 +149,9 @@ class _ChatVisualState extends State<ChatVisual> {
                   child: TextField(
                     style: TextStyle(color: Colors.white),
                     decoration: InputDecoration(
-                      hintText: 'Escribe aquí...',
-                      hintStyle: TextStyle(color: Colors.white.withOpacity(0.6)),
+                      hintText: 'Escribe aquí..',
+                      hintStyle:
+                          TextStyle(color: Colors.white.withOpacity(0.6)),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(20.0),
                         borderSide: BorderSide.none,
@@ -159,9 +163,7 @@ class _ChatVisualState extends State<ChatVisual> {
                 ),
                 IconButton(
                   icon: Icon(Icons.send, color: Colors.blue),
-                  onPressed: () {
-                    // Aquí iría la lógica para enviar mensajes
-                  },
+                  onPressed: () {},
                 ),
               ],
             ),
