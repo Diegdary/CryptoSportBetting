@@ -41,9 +41,19 @@ class Suport extends StatelessWidget {
                 width: MediaQuery.of(context).size.width * 0.80,
                 height: MediaQuery.of(context).size.height * 0.7,
                 decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 20, 47, 168).withOpacity(0.6),
-                  borderRadius: BorderRadius.circular(10),
-                ),
+                    color: Color.fromARGB(255, 16, 27, 66),
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: [
+                      BoxShadow(
+                        color:
+                            Colors.black.withOpacity(0.5), // Color de la sombra
+                        spreadRadius: 2, // Extensión de la sombra
+                        blurRadius: 7, // Desenfoque de la sombra
+                        offset:
+                            Offset(0, 3), // Cambios de posición de la sombra
+                      ),
+                    ],
+                  ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: <Widget>[
@@ -113,7 +123,7 @@ class _ChatVisualState extends State<ChatVisual> {
                       children: [
                         Text(
                           mensaje.esSoporte ? 'Soporte' : 'Usuario',
-                          style: TextStyle(fontWeight: FontWeight.bold),
+                          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
                         ),
                         Container(
                           decoration: BoxDecoration(
