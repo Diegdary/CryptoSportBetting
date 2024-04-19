@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'retiro.dart';
+import 'retiroreal.dart';
 class Wall extends StatelessWidget {
   const Wall({Key? key}) : super(key: key);
 
@@ -69,9 +70,18 @@ class Wall extends StatelessWidget {
                       borderRadius: BorderRadius.all(Radius.circular(50)),
                     ),
                     child: ElevatedButton(
-                      onPressed: () {
-                        // TODO: Agregar funcionalidad de depósito
-                      },
+                      onPressed: () => showModalBottomSheet(
+                        context: context,
+                        isScrollControlled: true,
+                        enableDrag: true,
+                        backgroundColor:
+                                    Color.fromARGB(255, 44, 58, 106), //aqui
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.vertical(
+                                      top: Radius.circular(20)),
+                                ),
+                                builder: (context) => retiro(),
+                      ),
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Color.fromARGB(255, 1, 29, 101),
                       ),
@@ -100,7 +110,7 @@ class Wall extends StatelessWidget {
                                   borderRadius: BorderRadius.vertical(
                                       top: Radius.circular(20)),
                                 ),
-                                builder: (context) => retiro(),
+                                builder: (context) => retiroreal(),
                       ),
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Color.fromARGB(255, 1, 29, 101),

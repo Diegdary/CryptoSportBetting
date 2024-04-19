@@ -9,7 +9,7 @@ class bestscreen extends StatelessWidget {
       padding: const EdgeInsets.fromLTRB(16, 16, 16, 16),
       child: SizedBox(
         width: double.infinity,
-        height: MediaQuery.of(context).size.height*80/100,
+        
         child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
           const SizedBox(
             height: 15,
@@ -311,7 +311,7 @@ class bestscreen extends StatelessWidget {
                   child: Text(
                     "133500",
                     style: TextStyle(
-                      fontSize: 40,
+                      fontSize: 20,
                       fontWeight: FontWeight.bold,
                       color: Color.fromARGB(255, 135, 251, 242),
                     ),

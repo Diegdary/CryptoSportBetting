@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class retiro extends StatelessWidget {
-  const retiro({super.key});
+class retiroreal extends StatelessWidget {
+  const retiroreal({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,7 @@ class retiro extends StatelessWidget {
           children: [
             Container(
               child: Text(
-                "Depositar",
+                "Retirar",
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 25,
@@ -50,7 +50,7 @@ class retiro extends StatelessWidget {
                   ),
                   Container(
                       child: Text(
-                    "Cantidad Crypto",
+                    "Cantidad a retirar",
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 20,
@@ -98,7 +98,13 @@ class retiro extends StatelessWidget {
                         Container(
                           height: 30,
                           width: 30,
-                          child: Image.asset("assets/token.png"),
+                          child:  Text("BTC",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15,
+                              color: Color.fromARGB(255, 135, 251, 242),
+                            ),
+                          ),
                         ),
                       ],
                     ),
@@ -129,20 +135,25 @@ class retiro extends StatelessWidget {
                   ),
                   Container(
                 child: Text(
-              "Dirección de reposito",
+              "Dirección de retiro",
               style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 20,
                   color: Color.fromARGB(255, 135, 251, 242)),
             )),
             Container(
-              height: 20,
-            ),
-            Container(
-              height: 60,
-              width: 60,
-              child: Image.asset('assets/qr.jpg'),
-            ),
+              height: 35,
+                    child: TextField(
+                      obscureText: false,
+                      decoration: InputDecoration(
+                          filled: true,
+                          fillColor: Color.fromARGB(255, 135, 251, 242),
+                          labelText: 'Direccion retiro',
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(20))),
+                    ),
+                  ),
+            
             Container(
               height: 10,
             ),
@@ -154,7 +165,7 @@ class retiro extends StatelessWidget {
               onPressed: () {
                 Navigator.pop(context);
               },
-              child: Text("Comprobar transaccion",style: (
+              child: Text("Retirar",style: (
                 TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 20,
