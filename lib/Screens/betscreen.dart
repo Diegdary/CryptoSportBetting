@@ -9,7 +9,7 @@ class bestscreen extends StatelessWidget {
       padding: const EdgeInsets.fromLTRB(16, 16, 16, 16),
       child: SizedBox(
         width: double.infinity,
-        height: MediaQuery.of(context).size.height,
+        height: MediaQuery.of(context).size.height*80/100,
         child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
           const SizedBox(
             height: 15,
@@ -19,7 +19,7 @@ class bestscreen extends StatelessWidget {
             style: TextStyle(
               color: Colors.white,
               fontWeight: FontWeight.bold,
-              fontSize: 25,
+              fontSize: 15,
             ),
           ),
           SizedBox(
@@ -31,7 +31,7 @@ class bestscreen extends StatelessWidget {
               children: [
                 Container(
                   //CONTAINER DE LA CAJA DE LA APUESTA 1
-                  height: 95,
+                  height: 75,
                   width: double.infinity,
                   decoration: BoxDecoration(
                     color: Color.fromARGB(255, 16, 27, 66),
@@ -53,15 +53,15 @@ class bestscreen extends StatelessWidget {
                     children: [
                       Container(
                         //remplazar con imagen
-                        height: 70,
-                        width: 70,
+                        height: 50,
+                        width: 50,
                         child: Image.asset('assets/baltimore.png'),
                       ),
                       Container(
                           child: Column(
                         children: [
                           SizedBox(
-                            height: 25,
+                            height: 15,
                           ),
                           Text(
                             "GANA 1.23",
@@ -93,7 +93,7 @@ class bestscreen extends StatelessWidget {
                 ),
                 Container(
                   //CONTAINER DE LA CAJA DE LA APUESTA 2
-                  height: 95,
+                  height: 75,
                   width: double.infinity,
                   decoration: BoxDecoration(
                     color: Color.fromARGB(255, 16, 27, 66),
@@ -115,15 +115,15 @@ class bestscreen extends StatelessWidget {
                     children: [
                       Container(
                         //remplazar con imagen
-                        height: 70,
-                        width: 70,
+                        height: 50,
+                        width: 50,
                         child: Image.asset('assets/baseball-02.png'),
                       ),
                       Container(
                           child: Column(
                         children: [
                           SizedBox(
-                            height: 25,
+                            height: 15,
                           ),
                           Text(
                             "GANA 1.72",
@@ -155,7 +155,7 @@ class bestscreen extends StatelessWidget {
                 ),
                 Container(
                   //CONTAINER DE LA CAJA DE LA APUESTA 3
-                  height: 95,
+                  height: 75,
                   width: double.infinity,
                   decoration: BoxDecoration(
                     color: Color.fromARGB(255, 16, 27, 66),
@@ -177,15 +177,15 @@ class bestscreen extends StatelessWidget {
                     children: [
                       Container(
                         //remplazar con imagen
-                        height: 70,
-                        width: 70,
+                        height: 50,
+                        width: 50,
                         child: Image.asset('assets/baseball-04.png'),
                       ),
                       Container(
                           child: Column(
                         children: [
                           SizedBox(
-                            height: 25,
+                            height: 15,
                           ),
                           Text(
                             "GANA 1.69420",
@@ -325,7 +325,7 @@ class bestscreen extends StatelessWidget {
           ),
           Container(
             width: double.infinity,
-            height: 60,
+            height: 40,
 
             child: ElevatedButton(
               onPressed: () {
