@@ -1,7 +1,7 @@
 import 'package:apuestas/Screens/Home.dart';
 import 'package:flutter/material.dart';
-import '../Screens/Login.dart';
-import '../Screens/Home.dart';
+import 'package:apuestas/Screens/Login.dart';
+import 'package:apuestas/Screens/Home.dart';
 
 class MyApp extends StatelessWidget {
   @override
