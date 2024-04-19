@@ -63,7 +63,7 @@ class Login extends StatelessWidget {
                     Container(
                       width: 300.0,
                       child: TextFormField(
-                        obscureText: false,
+                        obscureText: true,
                         style: TextStyle(color: Colors.white),
                         decoration: const InputDecoration(
                             labelText: "Contraseña",
