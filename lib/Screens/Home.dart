@@ -15,8 +15,7 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   int _currentIndex = 0;
-  bool _isModalOpen =
-      false; // Variable para controlar si la hoja modal está abierta
+  bool _isModalOpen = false; // Variable para controlar si la hoja modal está abierta
   final List<Widget> _screens = [
     HomeContent(),
     Suport(),
@@ -48,8 +47,7 @@ class _HomeState extends State<Home> {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
         ),
-        builder: (context) =>
-            bestscreen(), // Asegúrate de tener esta pantalla definida
+        builder: (context) => bestscreen(), // Asegúrate de tener esta pantalla definida
       ).whenComplete(() {
         setState(() {
           _isModalOpen = false;
@@ -62,33 +60,37 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: _screens[_currentIndex],
-      bottomNavigationBar: BottomNavigationBar(
-        items: <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.help),
-            label: 'Soporte',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.attach_money),
-            label: 'APOSTAR',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.wallet),
-            label: 'Billetera',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Mi perfil',
-          ),
-        ],
-        currentIndex: _currentIndex,
-        selectedItemColor: Color(0xFF3cb4dc),
-        unselectedItemColor: Color(0xFF3cb4dc).withOpacity(0.6),
-        onTap: _onItemTapped,
+      floatingActionButton: Container(
+        height: 70.0,
+        width: 70.0,
+        padding: EdgeInsets.all(10),
+        decoration: BoxDecoration(
+          color: Color.fromARGB(255, 44, 58, 106),
+          shape: BoxShape.circle,
+        ),
+        child: FloatingActionButton(
+          onPressed: () => _onItemTapped(2),
+          child: Icon(Icons.attach_money, size: 30),
+          backgroundColor: Color.fromARGB(255, 135, 251, 242),
+          elevation: 2.0,
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      bottomNavigationBar: BottomAppBar(
+        shape: CircularNotchedRectangle(),
+        notchMargin: 6.0,
+        child: Row(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: <Widget>[
+            IconButton(icon: Icon(Icons.home, color: Color.fromARGB(255, 135, 251, 242)), onPressed: () => _onItemTapped(0)),
+            IconButton(icon: Icon(Icons.help, color: Color.fromARGB(255, 135, 251, 242)), onPressed: () => _onItemTapped(1)),
+            SizedBox(width: 8), // Espacio para el botón flotante
+            IconButton(icon: Icon(Icons.wallet, color: Color.fromARGB(255, 135, 251, 242)), onPressed: () => _onItemTapped(3)),
+            IconButton(icon: Icon(Icons.person, color: Color.fromARGB(255, 135, 251, 242)), onPressed: () => _onItemTapped(4)),
+          ],
+        ),
+        color: Color.fromARGB(255, 44, 58, 106),
       ),
     );
   }
