@@ -87,7 +87,7 @@ class Login extends StatelessWidget {
                       child: ElevatedButton(
                         onPressed: () {
                           Navigator.pushReplacementNamed(
-                              context, Home.routName);
+                              context, Home.routname);
                         },
                         style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.transparent,
