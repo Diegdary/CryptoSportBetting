@@ -33,7 +33,7 @@ class _ProfScreenState extends State<ProfScreen> {
             child: Center(
               child: Container(
                 width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height,
+                //height: MediaQuery.of(context).size.height,
                 child: Column(
                   //columnas
                   children: [
@@ -215,6 +215,9 @@ class _ProfScreenState extends State<ProfScreen> {
                           )
                         ],
                       ),
+                    ),
+                    Container(
+                      height: 40,
                     ),
                   ],
                 ),
