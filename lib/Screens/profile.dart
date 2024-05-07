@@ -217,7 +217,7 @@ class _ProfScreenState extends State<ProfScreen> {
                       ),
                     ),
                     Container(
-                      height: 40,
+                      height: 20,
                     ),
                   ],
                 ),

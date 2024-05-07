@@ -15,11 +15,11 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   int _currentIndex = 0;
-  bool _isModalOpen = false; // Variable para controlar si la hoja modal está abierta
+  bool _isModalOpen = false;
   final List<Widget> _screens = [
     HomeContent(),
     Suport(),
-    Container(), // Este es un marcador de posición para la pantalla de apuestas
+    Container(),
     Wall(),
     ProfScreen(),
   ];
@@ -34,27 +34,34 @@ class _HomeState extends State<Home> {
     }
   }
 
-  void _showModalBottomSheet(BuildContext context) {
-    if (!_isModalOpen) {
+void _showModalBottomSheet(BuildContext context) {
+  if (!_isModalOpen) {
+    setState(() {
+      _isModalOpen = true;
+    });
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true, // Permite que el bottom sheet tome la altura completa requerida
+      enableDrag: true,
+      backgroundColor: Color.fromARGB(255, 44, 58, 106),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+      ),
+      builder: (context) {
+        return Wrap(
+          children: <Widget>[
+            bestscreen(), // Tu widget que contiene el contenido del bottom sheet
+          ],
+        );
+      },
+    ).whenComplete(() {
       setState(() {
-        _isModalOpen = true;
+        _isModalOpen = false;
       });
-      showModalBottomSheet(
-        context: context,
-        isScrollControlled: true,
-        enableDrag: true,
-        backgroundColor: Color.fromARGB(255, 44, 58, 106),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
-        ),
-        builder: (context) => bestscreen(), // Asegúrate de tener esta pantalla definida
-      ).whenComplete(() {
-        setState(() {
-          _isModalOpen = false;
-        });
-      });
-    }
+    });
   }
+}
+
 
   @override
   Widget build(BuildContext context) {
@@ -63,71 +70,83 @@ class _HomeState extends State<Home> {
       floatingActionButton: Container(
         height: 70.0,
         width: 70.0,
-        padding: EdgeInsets.all(15), // Ajusta este valor según sea necesario
+        padding: EdgeInsets.all(15),
         decoration: BoxDecoration(
-          color: Color.fromARGB(255, 44, 58, 106), // Mismo color que la barra de navegación
+          color: Color.fromARGB(255, 44, 58, 106),
           shape: BoxShape.circle,
         ),
         child: FloatingActionButton(
           onPressed: () => _onItemTapped(2),
           child: Icon(Icons.attach_money, size: 30),
-          backgroundColor: Color.fromARGB(255, 135, 251, 242), // Mismo color que la barra de navegación
-          elevation: 0.0, // Elevación cero para evitar sombras
+          backgroundColor: Color.fromARGB(255, 135, 251, 242),
+          elevation: 0.0,
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      bottomNavigationBar: BottomAppBar(
-        
-        notchMargin: 0.0, // Elimina el notchMargin para reducir el espacio
-       child: Row(
-    mainAxisSize: MainAxisSize.max,
-    mainAxisAlignment: MainAxisAlignment.spaceAround,
-    children: <Widget>[
-      Column(
-        mainAxisSize: MainAxisSize.min,
-        children: <Widget>[
-          IconButton(
-            icon: Icon(Icons.home, color: Color.fromARGB(255, 135, 251, 242)),
-            onPressed: () => _onItemTapped(0),
-          ),
-          Text('Inicio', style: TextStyle(color: Colors.white,fontSize: 11))
-        ],
-      ),
-      Column(
-        mainAxisSize: MainAxisSize.min,
-        children: <Widget>[
-          IconButton(
-            icon: Icon(Icons.person, color: Color.fromARGB(255, 135, 251, 242)),
-            onPressed: () => _onItemTapped(1),
-          ),
-          Text('Soporte', style: TextStyle(color: Colors.white,fontSize: 11))
-        ],
-      ),
-            SizedBox(width: 40), // Ajusta o elimina según sea necesario para alinear el botón
-           Column(
-        mainAxisSize: MainAxisSize.min,
-        children: <Widget>[
-          IconButton(
-            icon: Icon(Icons.wallet, color: Color.fromARGB(255, 135, 251, 242)),
-            onPressed: () => _onItemTapped(3),
-          ),
-          Text('Billetera',style: TextStyle(color: Colors.white,fontSize: 11))
-        ],
-      ),
-      Column(
-        mainAxisSize: MainAxisSize.min,
-        children: <Widget>[
-          IconButton(
-            icon: Icon(Icons.person, color: Color.fromARGB(255, 135, 251, 242)),
-            onPressed: () => _onItemTapped(4),
-          ),
-          Text('Perfil', style: TextStyle(color: Colors.white,fontSize: 11))
-        ],
-      ),
-    ],
-  ),
+    bottomNavigationBar: SizedBox(
+      height: 65,
+      child: BottomAppBar(
+        notchMargin: 6.0,
+        child: Row(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: <Widget>[
+            _buildTabItem(
+              icon: Icons.home,
+              text: 'Inicio',
+              index: 0,
+            ),
+            _buildTabItem(
+              icon: Icons.person,
+              text: 'Soporte',
+              index: 1,
+            ),
+            SizedBox(width: 50), 
+            _buildTabItem(
+              icon: Icons.wallet,
+              text: 'Billetera',
+              index: 3,
+            ),
+            _buildTabItem(
+              icon: Icons.person,
+              text: 'Perfil',
+              index: 4,
+            ),
+          ],
+        ),
         color: Color.fromARGB(255, 44, 58, 106),
       ),
-    );
-  }
+    ),
+  );
+}
+
+  Widget _buildTabItem({
+  required IconData icon,
+  required String text,
+  required int index,
+}) {
+  return Expanded(
+    child: Material(
+      color: Colors.transparent, // Asegúrate de que el Material sea transparente
+      child: InkWell(
+        onTap: () => _onItemTapped(index),
+        borderRadius: BorderRadius.circular(35), // Radio de la sombra redondeada
+        child: Container(
+          height: 90,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Icon(icon, color: Color.fromARGB(255, 135, 251, 242), size: 24),
+              Text(text, style: TextStyle(color: Colors.white, fontSize: 11))
+            ],
+          ),
+        ),
+        splashColor: Color.fromARGB(255, 61, 43, 228).withOpacity(0.2), // Color de la onda al presionar
+        highlightColor: Color.fromARGB(255, 7, 32, 255).withOpacity(0.1), // Color de la sombra al presionar
+      ),
+    ),
+  );
+}
+
 }
