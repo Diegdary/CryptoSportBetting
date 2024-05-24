@@ -15,7 +15,8 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   int _currentIndex = 0;
-  bool _isModalOpen = false;
+  OverlayEntry? _overlayEntry;
+
   final List<Widget> _screens = [
     HomeContent(),
     Suport(),
@@ -24,9 +25,10 @@ class _HomeState extends State<Home> {
     ProfScreen(),
   ];
 
+
   void _onItemTapped(int index) {
     if (index == 2) {
-      _showModalBottomSheet(context);
+      _toggleOverlay(context);
     } else {
       setState(() {
         _currentIndex = index;
@@ -34,33 +36,33 @@ class _HomeState extends State<Home> {
     }
   }
 
-void _showModalBottomSheet(BuildContext context) {
-  if (!_isModalOpen) {
-    setState(() {
-      _isModalOpen = true;
-    });
-    showModalBottomSheet(
-      context: context,
-      isScrollControlled: true, // Permite que el bottom sheet tome la altura completa requerida
-      enableDrag: true,
-      backgroundColor: Color.fromARGB(255, 44, 58, 106),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
-      ),
-      builder: (context) {
-        return Wrap(
-          children: <Widget>[
-            bestscreen(), // Tu widget que contiene el contenido del bottom sheet
-          ],
-        );
-      },
-    ).whenComplete(() {
-      setState(() {
-        _isModalOpen = false;
-      });
-    });
+  void _toggleOverlay(BuildContext context) {
+    if (_overlayEntry == null) {
+      _overlayEntry = _createOverlayEntry(context);
+      Overlay.of(context)!.insert(_overlayEntry!);
+    } else {
+      _overlayEntry!.remove();
+      _overlayEntry = null;
+    }
   }
-}
+
+ OverlayEntry _createOverlayEntry(BuildContext context) {
+return OverlayEntry(
+    builder: (BuildContext context) => Positioned(
+      bottom: MediaQuery.of(context).size.height * 0.078, 
+       top: MediaQuery.of(context).size.height * 0.4, 
+        left: MediaQuery.of(context).size.width * 0.1, 
+      right: MediaQuery.of(context).size.width * 0.1, 
+      child: Material(
+        color: Colors.transparent,
+        child: Container(
+          color: Colors.grey.withOpacity(0.5), // Fondo gris y un poco transparente
+          child: bestscreen(),
+        ),
+      ),
+    ),
+  );
+  }
 
 
   @override
