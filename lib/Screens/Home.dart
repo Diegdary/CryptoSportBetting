@@ -50,13 +50,13 @@ class _HomeState extends State<Home> {
 return OverlayEntry(
     builder: (BuildContext context) => Positioned(
       bottom: MediaQuery.of(context).size.height * 0.078, 
-       top: MediaQuery.of(context).size.height * 0.4, 
-        left: MediaQuery.of(context).size.width * 0.1, 
-      right: MediaQuery.of(context).size.width * 0.1, 
+       top: MediaQuery.of(context).size.height * 0.1, 
+        left: MediaQuery.of(context).size.width * 0.08, 
+      right: MediaQuery.of(context).size.width * 0.08, 
       child: Material(
         color: Colors.transparent,
         child: Container(
-          color: Colors.grey.withOpacity(0.5), // Fondo gris y un poco transparente
+          color: Colors.grey, // Fondo gris y un poco transparente
           child: bestscreen(),
         ),
       ),
