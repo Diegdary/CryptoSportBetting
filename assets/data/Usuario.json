@@ -1,0 +1,10 @@
+{
+    "Usuario": {
+      "Nombre": "Ejemplo Nombre",
+      "telefono": 1234567890,
+      "Email": "ejemplo@correo.com",
+      "Genero": "Ejemplo Genero",
+      "Nacimiento": "YYYY-MM-DD",
+      "Balance": 0.00
+    }
+  }

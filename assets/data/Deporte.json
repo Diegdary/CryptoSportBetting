@@ -1,0 +1,7 @@
+{
+    "Deporte": {
+      "Nombre": "Nombre_equipo",
+      "equipo[]": "Liga_del_equipo"
+      
+    }
+  }
