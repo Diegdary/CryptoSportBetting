@@ -25,7 +25,6 @@ class _HomeState extends State<Home> {
     ProfScreen(),
   ];
 
-
   void _onItemTapped(int index) {
     if (index == 2) {
       _toggleOverlay(context);
@@ -46,24 +45,44 @@ class _HomeState extends State<Home> {
     }
   }
 
- OverlayEntry _createOverlayEntry(BuildContext context) {
-return OverlayEntry(
-    builder: (BuildContext context) => Positioned(
-      bottom: MediaQuery.of(context).size.height * 0.078, 
-       top: MediaQuery.of(context).size.height * 0.1, 
-        left: MediaQuery.of(context).size.width * 0.08, 
-      right: MediaQuery.of(context).size.width * 0.08, 
-      child: Material(
-        color: Colors.transparent,
+  OverlayEntry _createOverlayEntry(BuildContext context) {
+    return OverlayEntry(
+      builder: (BuildContext context) => GestureDetector(
+        onTap: () {
+          // Cierra el overlay cuando se toca fuera de 'betscreen'
+          _toggleOverlay(context);
+        },
+        behavior: HitTestBehavior.translucent,
         child: Container(
-          color: Colors.grey, // Fondo gris y un poco transparente
-          child: bestscreen(),
+          color: Colors.transparent,
+          child: Center(
+            child: GestureDetector(
+              onTap:
+                  () {}, // Evita que los toques dentro de 'betscreen' cierren el overlay
+              child: Material(
+                color: Colors.transparent,
+                child: Container(
+                  width: MediaQuery.of(context).size.width * 0.6,
+                  height: MediaQuery.of(context).size.height * 0.9,
+                  decoration: const BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [
+                        Color.fromARGB(255, 44, 58, 106),
+                        Color.fromARGB(255, 12, 13, 52),
+                      ],
+                    ),
+                  ),
+                  child: bestscreen(),
+                ),
+              ),
+            ),
+          ),
         ),
       ),
-    ),
-  );
+    );
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -85,70 +104,73 @@ return OverlayEntry(
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-    bottomNavigationBar: SizedBox(
-      height: 65,
-      child: BottomAppBar(
-        notchMargin: 6.0,
-        child: Row(
-          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: <Widget>[
-            _buildTabItem(
-              icon: Icons.home,
-              text: 'Inicio',
-              index: 0,
-            ),
-            _buildTabItem(
-              icon: Icons.person,
-              text: 'Soporte',
-              index: 1,
-            ),
-            SizedBox(width: 50), 
-            _buildTabItem(
-              icon: Icons.wallet,
-              text: 'Billetera',
-              index: 3,
-            ),
-            _buildTabItem(
-              icon: Icons.person,
-              text: 'Perfil',
-              index: 4,
-            ),
-          ],
-        ),
-        color: Color.fromARGB(255, 44, 58, 106),
-      ),
-    ),
-  );
-}
-
-  Widget _buildTabItem({
-  required IconData icon,
-  required String text,
-  required int index,
-}) {
-  return Expanded(
-    child: Material(
-      color: Colors.transparent, // Asegúrate de que el Material sea transparente
-      child: InkWell(
-        onTap: () => _onItemTapped(index),
-        borderRadius: BorderRadius.circular(35), // Radio de la sombra redondeada
-        child: Container(
-          height: 90,
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            mainAxisAlignment: MainAxisAlignment.center,
+      bottomNavigationBar: SizedBox(
+        height: 65,
+        child: BottomAppBar(
+          notchMargin: 6.0,
+          child: Row(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
-              Icon(icon, color: Color.fromARGB(255, 135, 251, 242), size: 24),
-              Text(text, style: TextStyle(color: Colors.white, fontSize: 11))
+              _buildTabItem(
+                icon: Icons.home,
+                text: 'Inicio',
+                index: 0,
+              ),
+              _buildTabItem(
+                icon: Icons.person,
+                text: 'Soporte',
+                index: 1,
+              ),
+              SizedBox(width: 50),
+              _buildTabItem(
+                icon: Icons.wallet,
+                text: 'Billetera',
+                index: 3,
+              ),
+              _buildTabItem(
+                icon: Icons.person,
+                text: 'Perfil',
+                index: 4,
+              ),
             ],
           ),
+          color: Color.fromARGB(255, 44, 58, 106),
         ),
-        splashColor: Color.fromARGB(255, 61, 43, 228).withOpacity(0.2), // Color de la onda al presionar
-        highlightColor: Color.fromARGB(255, 7, 32, 255).withOpacity(0.1), // Color de la sombra al presionar
       ),
-    ),
-  );
-}
+    );
+  }
 
+  Widget _buildTabItem({
+    required IconData icon,
+    required String text,
+    required int index,
+  }) {
+    return Expanded(
+      child: Material(
+        color:
+            Colors.transparent, // Asegúrate de que el Material sea transparente
+        child: InkWell(
+          onTap: () => _onItemTapped(index),
+          borderRadius:
+              BorderRadius.circular(35), // Radio de la sombra redondeada
+          child: Container(
+            height: 90,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Icon(icon, color: Color.fromARGB(255, 135, 251, 242), size: 24),
+                Text(text, style: TextStyle(color: Colors.white, fontSize: 11))
+              ],
+            ),
+          ),
+          splashColor: Color.fromARGB(255, 61, 43, 228)
+              .withOpacity(0.2), // Color de la onda al presionar
+          highlightColor: Color.fromARGB(255, 7, 32, 255)
+              .withOpacity(0.1), // Color de la sombra al presionar
+        ),
+      ),
+    );
+  }
 }
