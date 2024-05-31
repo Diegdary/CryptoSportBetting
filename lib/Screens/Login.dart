@@ -19,7 +19,7 @@ class _LoginState extends State<Login> {
 
   TextEditingController passwordController = TextEditingController();
 
-  String inicioValido = "rr";
+  String inicioValido = "";
 
   final pref = PreferenciaUsuario();
 
