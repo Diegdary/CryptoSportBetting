@@ -1,7 +1,7 @@
 {
     "Usuarios": [
         {
-            "nombre": "Javier",
+            "nombre": "javier",
             "password":"1234",
             "telefono": 369696969,
             "email": "javierinsignares@correo.com",
