@@ -2,6 +2,7 @@ import 'package:apuestas/Core/Modelos/Apuestas.dart';
 
 class Usuario {
   final String nombre;
+  final String password;
   final int telefono;
   final String email;
   final String genero;
@@ -11,6 +12,7 @@ class Usuario {
 
   Usuario(
       {required this.nombre,
+      required this.password,
       required this.telefono,
       required this.email,
       required this.genero,
@@ -19,15 +21,17 @@ class Usuario {
       required this.apuestas});
 
   factory Usuario.fromJson(Map<String, dynamic> json) {
-     var apuestaList = json["apuestas"] as List;
-    List<Apuesta> apuestax = apuestaList.map((item) => Apuesta.fromJson(item)).toList();
+    var apuestaList = json["apuestas"] as List;
+    List<Apuesta> apuestax =
+        apuestaList.map((item) => Apuesta.fromJson(item)).toList();
     return Usuario(
         nombre: json["nombre"],
+        password: json["password"],
         telefono: json["telefono"],
         email: json["email"],
         genero: json["genero"],
         nacimiento: json["nacimiento"],
         balance: json["balance"],
-        apuestas: apuestax );
+        apuestas: apuestax);
   }
 }

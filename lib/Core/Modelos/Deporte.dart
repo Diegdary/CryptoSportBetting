@@ -2,11 +2,14 @@ import "Equipo.dart";
 
 class Deporte {
   final String nombre;
-  final List<Equipo> liga;
+  final List<Equipo> equipo;
 
-  Deporte({required this.nombre, required this.liga});
+  Deporte({required this.nombre, required this.equipo});
 
   factory Deporte.fromJson(Map<String, dynamic> json) {
-    return Deporte(nombre: json["nombre"], liga: json["liga"]);
+    var equipolist = json["equipo"] as List;
+    List<Equipo> equipos =
+        equipolist.map((item) => Equipo.fromJson(item)).toList();
+    return Deporte(nombre: json["nombre"], equipo: equipos);
   }
 }

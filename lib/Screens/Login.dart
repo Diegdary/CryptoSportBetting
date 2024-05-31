@@ -1,11 +1,27 @@
 import 'package:apuestas/Screens/Register.dart';
+import 'package:apuestas/main.dart';
+import 'package:apuestas/share_prefs/PreferenciaUsuario.dart';
 import 'package:flutter/material.dart';
 import 'package:apuestas/Screens/Home.dart';
+import 'package:apuestas/Core/Modelos/Usuario.dart';
 
-class Login extends StatelessWidget {
-  const Login({super.key, required this.title});
+class Login extends StatefulWidget {
+  Login({super.key, required this.title});
   static const String routName = "Login";
   final String title;
+
+  @override
+  State<Login> createState() => _LoginState();
+}
+
+class _LoginState extends State<Login> {
+  TextEditingController userController = TextEditingController();
+
+  TextEditingController passwordController = TextEditingController();
+
+  String inicioValido = "rr";
+
+  final pref = PreferenciaUsuario();
 
   @override
   Widget build(BuildContext context) {
@@ -55,6 +71,9 @@ class Login extends StatelessWidget {
                       Container(
                         width: 300.0,
                         child: TextFormField(
+                          onChanged: (value) {
+                            userController.text = value;
+                          },
                           style: TextStyle(color: Colors.white),
                           decoration: const InputDecoration(
                               labelText: "Nombre de usuario",
@@ -67,6 +86,9 @@ class Login extends StatelessWidget {
                       Container(
                         width: 300.0,
                         child: TextFormField(
+                          onChanged: (value) {
+                            passwordController.text = value;
+                          },
                           obscureText: true,
                           style: TextStyle(color: Colors.white),
                           decoration: const InputDecoration(
@@ -78,7 +100,14 @@ class Login extends StatelessWidget {
                         ),
                       ),
                       Container(
-                        margin: const EdgeInsets.fromLTRB(0, 40.0, 0, 0),
+                        margin: const EdgeInsets.fromLTRB(0, 10.0, 0, 0),
+                        child: Text(
+                          inicioValido,
+                          style: TextStyle(color: Color(0xFFaa0000)),
+                        ),
+                      ),
+                      Container(
+                        //margin: const EdgeInsets.fromLTRB(0, 40.0, 0, 0),
                         height: 50.0,
                         width: 300.0,
                         decoration: BoxDecoration(
@@ -90,8 +119,29 @@ class Login extends StatelessWidget {
                             )),
                         child: ElevatedButton(
                           onPressed: () {
-                            Navigator.pushReplacementNamed(
-                                context, Home.routname);
+                            for (var i = 0; i < usersList.length; i++) {
+                              print(usersList[i]["nombre"]);
+                              print(userController.text);
+                              print(usersList[i]["password"]);
+                              print(passwordController.text);
+
+                              if (userController.text ==
+                                      usersList[i]["nombre"] &&
+                                  passwordController.text ==
+                                      usersList[i]["password"]) {
+                                Usuario usuario =
+                                    Usuario.fromJson(usersList[i]);
+
+                                pref.sNombre = usuario.nombre;
+
+                                Navigator.pushReplacementNamed(
+                                    context, Home.routname);
+                              } else {
+                                setState(() {
+                                  inicioValido = "datos no validos";
+                                });
+                              }
+                            }
                           },
                           style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.transparent,

@@ -13,7 +13,7 @@ void main() async {
   await PreferenciaUsuario().initprefs();
 
   try {
-    String jsonstring = await rootBundle.loadString("assets/data/Data.json");
+    String jsonstring = await rootBundle.loadString("assets/data/data.json");
     jsonDecoded = json.decode(jsonstring);
     usersList = jsonDecoded["Usuarios"];
   } catch (e) {

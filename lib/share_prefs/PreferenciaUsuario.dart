@@ -21,15 +21,18 @@ class PreferenciaUsuario {
 
   PreferenciaUsuario.internal();
 
-  int get gSexo => _prefs.getInt('sexo') ?? 0;
-  set sSexo(int value) => _prefs.setInt('sexo', value);
+  int get gTelefono => _prefs.getInt('telefono') ?? 0;
+  set sTelefono(int value) => _prefs.setInt('telefono', value);
 
-  bool get gColorSec => _prefs.getBool('Colorsecundario') ?? false;
-  set sColorSec(bool value) => _prefs.setBool('Colorsecundario', value);
-
-  String get gNombre => _prefs.getString('nombre') ?? "";
+  String get gNombre => _prefs.getString('nombre') ?? "r";
   set sNombre(String value) => _prefs.setString('nombre', value);
 
-  String get gUltimaP => _prefs.getString('UltimaP') ?? "Home";
-  set sUltimaP(String value) => _prefs.setString('UltimaP', value);
+  String get gEmail => _prefs.getString('email') ?? "r";
+  set sEmail(String value) => _prefs.setString('email', value);
+
+  String get gGenero => _prefs.getString('Genero') ?? "r";
+  set sGenero(String value) => _prefs.setString('Genero', value);
+
+  String get gNacimiento => _prefs.getString('Nacimiento') ?? "r";
+  set sNacimiento(String value) => _prefs.setString('Nacimiento', value);
 }

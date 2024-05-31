@@ -1,11 +1,12 @@
+import 'package:apuestas/Core/Modelos/Deporte.dart';
+
 class Juego {
   final String fecha;
   final String estado;
-  final String deporte;
+  final Deporte deporte;
   final double multiplicador;
   final String equipo1;
   final String equipo2;
-  
 
   Juego(
       {required this.fecha,
@@ -19,7 +20,7 @@ class Juego {
     return Juego(
         fecha: json["fecha"],
         estado: json["estado"],
-        deporte: json["deporte"],
+        deporte: Deporte.fromJson(json["deporte"]),
         multiplicador: json["multiplicador"],
         equipo1: json["equipo1"],
         equipo2: json["equipo2"]);

@@ -13,7 +13,7 @@ class Apuesta {
       required this.juegos});
 
   factory Apuesta.fromJson(Map<String, dynamic> json) {
-     var juegoList = json["juegos"] as List;
+    var juegoList = json["juego"] as List;
     List<Juego> juegox = juegoList.map((item) => Juego.fromJson(item)).toList();
     return Apuesta(
         v_e_apuesta: json["v_e_apuesta"],
