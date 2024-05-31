@@ -25,7 +25,7 @@ class Suport extends StatelessWidget {
             Align(
               alignment: Alignment.topCenter,
               child: Padding(
-                padding: const EdgeInsets.only(top: 40.0),
+                padding: const EdgeInsets.symmetric(vertical: 30.0),
                 child: Text(
                   'Soporte',
                   style: TextStyle(
@@ -38,22 +38,22 @@ class Suport extends StatelessWidget {
             ),
             Center(
               child: Container(
+                margin: EdgeInsets.only(top: 20.0),
                 width: MediaQuery.of(context).size.width * 0.80,
                 height: MediaQuery.of(context).size.height * 0.7,
                 decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 16, 27, 66),
-                    borderRadius: BorderRadius.circular(10),
-                    boxShadow: [
-                      BoxShadow(
-                        color:
-                            Colors.black.withOpacity(0.5), // Color de la sombra
-                        spreadRadius: 2, // Extensión de la sombra
-                        blurRadius: 7, // Desenfoque de la sombra
-                        offset:
-                            Offset(0, 3), // Cambios de posición de la sombra
-                      ),
-                    ],
-                  ),
+                  color: Color.fromARGB(255, 16, 27, 66),
+                  borderRadius: BorderRadius.circular(10),
+                  boxShadow: [
+                    BoxShadow(
+                      color:
+                          Colors.black.withOpacity(0.5), // Color de la sombra
+                      spreadRadius: 2, // Extensión de la sombra
+                      blurRadius: 7, // Desenfoque de la sombra
+                      offset: Offset(0, 3), // Cambios de posición de la sombra
+                    ),
+                  ],
+                ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: <Widget>[
@@ -123,7 +123,8 @@ class _ChatVisualState extends State<ChatVisual> {
                       children: [
                         Text(
                           mensaje.esSoporte ? 'Soporte' : 'Usuario',
-                          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, color: Colors.white),
                         ),
                         Container(
                           decoration: BoxDecoration(

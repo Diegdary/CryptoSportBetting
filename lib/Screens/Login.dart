@@ -131,8 +131,11 @@ class _LoginState extends State<Login> {
                                       usersList[i]["password"]) {
                                 Usuario usuario =
                                     Usuario.fromJson(usersList[i]);
-
+                                //asignando shared_preference
                                 pref.sNombre = usuario.nombre;
+                                pref.sEmail = usuario.email;
+                                pref.sTelefono = usuario.telefono;
+                                pref.sGenero = usuario.genero;
 
                                 Navigator.pushReplacementNamed(
                                     context, Home.routname);

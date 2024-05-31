@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'History.dart';
+import 'package:apuestas/share_prefs/PreferenciaUsuario.dart';
 
 class ProfScreen extends StatefulWidget {
   const ProfScreen({Key? key}) : super(key: key);
@@ -10,6 +11,7 @@ class ProfScreen extends StatefulWidget {
 
 class _ProfScreenState extends State<ProfScreen> {
   TextEditingController _dateController = TextEditingController();
+  final pref = PreferenciaUsuario();
 
   @override
   Widget build(BuildContext context) {
@@ -79,6 +81,7 @@ class _ProfScreenState extends State<ProfScreen> {
                     Container(
                       width: 300.0,
                       child: TextFormField(
+                        initialValue: pref.gNombre,
                         readOnly: true,
                         style: TextStyle(color: Colors.white),
                         decoration: const InputDecoration(
@@ -92,6 +95,7 @@ class _ProfScreenState extends State<ProfScreen> {
                     Container(
                       width: 300.0,
                       child: TextFormField(
+                        initialValue: pref.gEmail,
                         readOnly: true,
                         style: TextStyle(color: Colors.white),
                         decoration: const InputDecoration(
@@ -105,6 +109,7 @@ class _ProfScreenState extends State<ProfScreen> {
                     Container(
                       width: 300.0,
                       child: TextFormField(
+                        initialValue: pref.gTelefono.toString(),
                         readOnly: true,
                         style: TextStyle(color: Colors.white),
                         decoration: const InputDecoration(
@@ -118,6 +123,7 @@ class _ProfScreenState extends State<ProfScreen> {
                     Container(
                       width: 300.0,
                       child: TextFormField(
+                        initialValue: pref.gGenero,
                         //enabled: false,
                         readOnly: true,
                         style: TextStyle(color: Colors.white),
@@ -144,19 +150,6 @@ class _ProfScreenState extends State<ProfScreen> {
                         onTap: () {
                           _selectDate();
                         },
-                      ),
-                    ),
-                    Container(
-                      width: 300.0,
-                      child: TextFormField(
-                        readOnly: true,
-                        style: TextStyle(color: Colors.white),
-                        decoration: const InputDecoration(
-                            labelText: "Balance",
-                            enabledBorder: UnderlineInputBorder(
-                                borderSide:
-                                    BorderSide(color: Color(0xFFFFFFFF))),
-                            labelStyle: TextStyle(color: Colors.white)),
                       ),
                     ),
                     Container(
