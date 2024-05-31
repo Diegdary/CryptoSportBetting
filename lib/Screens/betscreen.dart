@@ -11,103 +11,130 @@ class _BestScreenState extends State<BestScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
+
+      backgroundColor: Color(0xFF374B7C),
       appBar: AppBar(
+        backgroundColor: Color(0xFF374B7C),
         title: Center(
-          child: Text('Apostar'),
+          child: Text(
+            'Apuestas',
+            style: TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
         ),
+
       ),
-      body: Center(
+      body: SingleChildScrollView(
+         child: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            SizedBox(height: MediaQuery.of(context).size.height * 0),      
             Container(
               height: MediaQuery.of(context).size.height * 0.08,
               width: MediaQuery.of(context).size.width * 0.8,
-              color: Colors.grey,
+              decoration: BoxDecoration(
+                color: Color(0xFF101B42),
+                borderRadius: BorderRadius.circular(15.0),
+              ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
-                  Image.asset(
-                    'assets/baltimore.png',
-                    height: MediaQuery.of(context).size.height * 0.07,
-                    width: MediaQuery.of(context).size.width * 0.1,
+                  Container(
+                    margin: EdgeInsets.only(left: 8.0, right: 8.0),
+                    child: Image.asset('assets/baltimore.png'),
                   ),
                   SizedBox(width: 10),
                   Expanded(
-                    // Usa Expanded para llenar el espacio restante en la fila
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment
-                          .start, // Alinea los textos a la izquierda
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: <Widget>[
                         Row(
-                          // Primera fila con "GANA" y "1.23"
+                          mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
                             Text(
                               'GANA ',
                               style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Color(0xFF87FBF2),
                                 fontSize: 14,
                               ),
                             ),
                             Text(
                               '1.23',
                               style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Color(0xFF87FBF2),
                                 fontSize: 14,
                               ),
                             ),
                           ],
                         ),
+                        SizedBox(height: 4),
                         Text(
-                          // Segunda fila con el nombre de los equipos
                           'Baltimore VS Atlanta Bravers',
+                          textAlign: TextAlign.center,
                           style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
                             fontSize: 8,
                           ),
                         ),
                       ],
                     ),
                   ),
-
-                Container(
-        margin: EdgeInsets.only(left: 8.0, right: 8.0), // Margen solo a los lados
-        child: Image.asset('assets/x.png',
-          height: MediaQuery.of(context).size.height * 0.06,
-          width: MediaQuery.of(context).size.width * 0.08,
-        ),
-      ),
-    ],
-  ),
-),
+                  Container(
+                    margin: EdgeInsets.only(left: 8.0, right: 8.0),
+                    child: Image.asset(
+                      'assets/x.png',
+                      height: MediaQuery.of(context).size.height * 0.06,
+                      width: MediaQuery.of(context).size.width * 0.08,
+                    ),
+                  ),
+                ],
+              ),
+            ),
             SizedBox(height: 20),
             Container(
               height: MediaQuery.of(context).size.height * 0.08,
               width: MediaQuery.of(context).size.width * 0.8,
-              color: Colors.grey,
+              decoration: BoxDecoration(
+                color: Color(0xFF101B42),
+                borderRadius: BorderRadius.circular(15.0),
+              ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
-                  Image.asset(
-                    'assets/baseball-02.png',
-                    height: MediaQuery.of(context).size.height * 0.07,
-                    width: MediaQuery.of(context).size.width * 0.1,
+                  Container(
+                    margin: EdgeInsets.only(left: 8.0, right: 8.0),
+                    child: Image.asset('assets/baseball-02.png'),
                   ),
                   SizedBox(width: 10),
                   Expanded(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: <Widget>[
                         Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
                             Text(
                               'GANA ',
                               style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Color(0xFF87FBF2),
                                 fontSize: 14,
                               ),
                             ),
                             Text(
                               '1.72',
                               style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Color(0xFF87FBF2),
                                 fontSize: 14,
                               ),
                             ),
@@ -116,91 +143,224 @@ class _BestScreenState extends State<BestScreen> {
                         Text(
                           'Texas Rangers VS Miami Marlins',
                           style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
                             fontSize: 8,
                           ),
                         ),
                       ],
                     ),
                   ),
-
-                 Container(
-        margin: EdgeInsets.only(left: 8.0, right: 8.0), // Margen solo a los lados
-        child: Image.asset('assets/x.png',
-          height: MediaQuery.of(context).size.height * 0.06,
-          width: MediaQuery.of(context).size.width * 0.08,
-        ),
-      ),
-    ],
-  ),
-),
+                  Container(
+                    margin: EdgeInsets.only(left: 8.0, right: 8.0),
+                    child: Image.asset(
+                      'assets/x.png',
+                      height: MediaQuery.of(context).size.height * 0.06,
+                      width: MediaQuery.of(context).size.width * 0.08,
+                    ),
+                  ),
+                ],
+              ),
+            ),
             SizedBox(height: 20),
-           Container(
-  height: MediaQuery.of(context).size.height * 0.08,
-  width: MediaQuery.of(context).size.width * 0.8,
-  color: Colors.grey,
-  child: Row(
-    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-    children: <Widget>[
-      Image.asset('assets/baseball-04.png',
-        height: MediaQuery.of(context).size.height * 0.07,
-        width: MediaQuery.of(context).size.width * 0.1,
-      ),
-      SizedBox(width: 10),
-      Expanded(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
+            Container(
+              height: MediaQuery.of(context).size.height * 0.08,
+              width: MediaQuery.of(context).size.width * 0.8,
+              decoration: BoxDecoration(
+                color: Color(0xFF101B42),
+                borderRadius: BorderRadius.circular(15.0),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Container(
+                    margin: EdgeInsets.only(left: 8.0, right: 8.0),
+                    child: Image.asset('assets/baseball-04.png'),
+                  ),
+                  SizedBox(width: 10),
+                  Expanded(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: <Widget>[
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Text(
+                              'GANA ',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Color(0xFF87FBF2),
+                                fontSize: 16,
+                              ),
+                            ),
+                            Text(
+                              '1.72',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Color(0xFF87FBF2),
+                                fontSize: 16,
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: 4),
+                        Text(
+                          'Oakland Athletics VS Anaheim Angels',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                            fontSize: 8,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(left: 8.0, right: 8.0),
+                    child: Image.asset(
+                      'assets/x.png',
+                      height: MediaQuery.of(context).size.height * 0.06,
+                      width: MediaQuery.of(context).size.width * 0.08,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 20),
+            Container(
+              height: MediaQuery.of(context).size.height * 0.06,
+              width: MediaQuery.of(context).size.width * 0.8,
+             decoration: BoxDecoration(
+                color: Color(0xFF101B42),
+                borderRadius: BorderRadius.circular(15.0),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Padding(
+                    padding: EdgeInsets.only(left: 8.0),
+                    child: Text(
+                      'Apuesta:',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xFF87FBF2),
+                        fontSize: 13,
+                      ),
+                    ),
+                  ),
+                  SizedBox(width: 10),
+                  Expanded(
+                    child: Container(
+                      height: MediaQuery.of(context).size.height * 0.06 * 0.7,
+                      child: TextField(
+                        keyboardType: TextInputType.number,
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Color(0xFF101B42),
+                        ),
+                        decoration: InputDecoration(
+                          filled: true,
+                          fillColor: Color(0xFFBAF4FF),
+                          border: OutlineInputBorder(),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(left: 8.0, right: 8.0),
+                    child: Image.asset(
+                      'assets/token.png',
+                      height: MediaQuery.of(context).size.height * 0.04,
+                      width: MediaQuery.of(context).size.width * 0.08,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 10),
             Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Text(
-                  'GANA ',
+                  'Multiplicador: ',
                   style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Color(0xFF87FBF2),
                     fontSize: 14,
                   ),
                 ),
                 Text(
-                  '1.72',
+                  '2.67',
                   style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Color(0xFF87FBF2),
                     fontSize: 14,
                   ),
                 ),
               ],
             ),
-            Text(
-              'Oakland Athletics VS Anaheim Angels',
-              style: TextStyle(
-                fontSize: 8,
+            SizedBox(height: 20),
+            Container(
+              height: MediaQuery.of(context).size.height * 0.06,
+              width: MediaQuery.of(context).size.width * 0.8,
+              decoration: BoxDecoration(
+                color: Color(0xFF101B42),
+                borderRadius: BorderRadius.circular(15.0),
+              ),
+              child: Center(
+                child: RichText(
+                  text: TextSpan(
+                    style: TextStyle(
+                      fontSize: 14,
+                      color: Colors.black,
+                    ),
+                    children: <TextSpan>[
+                      TextSpan(
+                        text: 'Ganancia: ',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                          color: Color(0xFF87FBF2),
+                        ),
+                      ),
+                      TextSpan(
+                        text: '133500',
+                        style: TextStyle(
+                          fontSize: 26,
+                          fontWeight: FontWeight.bold,
+                          color: Color(0xFF3AB1DA),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               ),
             ),
-          ],
-        ),
-      ),
-      Container(
-        margin: EdgeInsets.only(left: 8.0, right: 8.0), // Margen solo a los lados
-        child: Image.asset('assets/x.png',
-          height: MediaQuery.of(context).size.height * 0.06,
-          width: MediaQuery.of(context).size.width * 0.08,
-        ),
-      ),
-    ],
-  ),
-),
-
-
-
-            SizedBox(height: 20), // Espacio entre el cuadro y el botón
+            SizedBox(height: 20),
             FloatingActionButton(
-              // Botón 'apostar' central
-              onPressed: () {
-                // Aquí puedes añadir la funcionalidad del botón 'apostar'
-              },
+              onPressed: () {},
               child: Icon(Icons.attach_money, size: 30),
               backgroundColor: Color.fromARGB(255, 135, 251, 242),
               elevation: 0.0,
             ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Text(
+                  'APOSTAR',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Color.fromRGBO(255, 255, 255, 1),
+                    fontSize: 17,
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
+      ),
       ),
     );
   }
