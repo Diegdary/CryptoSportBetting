@@ -5,6 +5,7 @@ class Juego {
   final double multiplicador;
   final String equipo1;
   final String equipo2;
+  
 
   Juego(
       {required this.fecha,

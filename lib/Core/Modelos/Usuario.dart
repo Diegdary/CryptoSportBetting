@@ -19,6 +19,8 @@ class Usuario {
       required this.apuestas});
 
   factory Usuario.fromJson(Map<String, dynamic> json) {
+     var apuestaList = json["apuestas"] as List;
+    List<Apuesta> apuestax = apuestaList.map((item) => Apuesta.fromJson(item)).toList();
     return Usuario(
         nombre: json["nombre"],
         telefono: json["telefono"],
@@ -26,6 +28,6 @@ class Usuario {
         genero: json["genero"],
         nacimiento: json["nacimiento"],
         balance: json["balance"],
-        apuestas: json["apuestas"]);
+        apuestas: apuestax );
   }
 }
