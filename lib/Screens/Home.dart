@@ -45,44 +45,46 @@ class _HomeState extends State<Home> {
     }
   }
 
-  OverlayEntry _createOverlayEntry(BuildContext context) {
-    return OverlayEntry(
-      builder: (BuildContext context) => GestureDetector(
-        onTap: () {
-          // Cierra el overlay cuando se toca fuera de 'betscreen'
-          _toggleOverlay(context);
-        },
-        behavior: HitTestBehavior.translucent,
-        child: Container(
-          color: Colors.transparent,
-          child: Center(
-            child: GestureDetector(
-              onTap:
-                  () {}, // Evita que los toques dentro de 'betscreen' cierren el overlay
-              child: Material(
-                color: Colors.transparent,
-                child: Container(
-                  width: MediaQuery.of(context).size.width * 0.6,
-                  height: MediaQuery.of(context).size.height * 0.9,
-                  decoration: const BoxDecoration(
-                    gradient: LinearGradient(
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter,
-                      colors: [
-                        Color.fromARGB(255, 44, 58, 106),
-                        Color.fromARGB(255, 12, 13, 52),
-                      ],
-                    ),
+ OverlayEntry _createOverlayEntry(BuildContext context) {
+  return OverlayEntry(
+    builder: (BuildContext context) => GestureDetector(
+      onTap: () {
+        // Cierra el overlay cuando se toca fuera de 'betscreen'
+        _toggleOverlay(context);
+      },
+      behavior: HitTestBehavior.translucent,
+      child: Container(
+        color: Colors.transparent,
+        child: Align(
+          alignment: Alignment.bottomCenter,
+          child: GestureDetector(
+            onTap:
+                () {}, // Evita que los toques dentro de 'betscreen' cierren el overlay
+            child: Material(
+              color: Colors.transparent,
+              child: Container(
+                width: MediaQuery.of(context).size.width * 0.9,
+                height: MediaQuery.of(context).size.height * 0.9,
+                decoration: const BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                      Color.fromARGB(255, 44, 58, 106),
+                      Color.fromARGB(255, 12, 13, 52),
+                    ],
                   ),
-                  child: bestscreen(),
                 ),
+                child: bestscreen(),
               ),
             ),
           ),
         ),
       ),
-    );
-  }
+    ),
+  );
+}
+
 
   @override
   Widget build(BuildContext context) {
