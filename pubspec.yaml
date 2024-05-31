@@ -18,6 +18,7 @@ dependencies:
 
   cupertino_icons: ^1.0.2
   backdrop_modal_route: ^2.0.4
+  shared_preferences: ^2.2.3
 
 dev_dependencies:
   flutter_test:

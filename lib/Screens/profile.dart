@@ -79,6 +79,7 @@ class _ProfScreenState extends State<ProfScreen> {
                     Container(
                       width: 300.0,
                       child: TextFormField(
+                        readOnly: true,
                         style: TextStyle(color: Colors.white),
                         decoration: const InputDecoration(
                             labelText: "Nombre de usuario",
@@ -91,6 +92,7 @@ class _ProfScreenState extends State<ProfScreen> {
                     Container(
                       width: 300.0,
                       child: TextFormField(
+                        readOnly: true,
                         style: TextStyle(color: Colors.white),
                         decoration: const InputDecoration(
                             labelText: "E-mail",
@@ -103,6 +105,7 @@ class _ProfScreenState extends State<ProfScreen> {
                     Container(
                       width: 300.0,
                       child: TextFormField(
+                        readOnly: true,
                         style: TextStyle(color: Colors.white),
                         decoration: const InputDecoration(
                             labelText: "Telefono",
@@ -115,6 +118,8 @@ class _ProfScreenState extends State<ProfScreen> {
                     Container(
                       width: 300.0,
                       child: TextFormField(
+                        //enabled: false,
+                        readOnly: true,
                         style: TextStyle(color: Colors.white),
                         decoration: const InputDecoration(
                             labelText: "Genero",
@@ -144,6 +149,7 @@ class _ProfScreenState extends State<ProfScreen> {
                     Container(
                       width: 300.0,
                       child: TextFormField(
+                        readOnly: true,
                         style: TextStyle(color: Colors.white),
                         decoration: const InputDecoration(
                             labelText: "Balance",

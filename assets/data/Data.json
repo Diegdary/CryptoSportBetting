@@ -1,185 +1,188 @@
 {
-    "Usuario": {
-      "Nombre": "Ejemplo Nombre",
-      "telefono": 1234567890,
-      "Email": "ejemplo@correo.com",
-      "Genero": "Ejemplo Genero",
-      "Nacimiento": "YYYY-MM-DD",
-      "Balance": 0.00,
-      "Apuestas":[
-         {
-            "V_E_Apuesta": "123456",
-            "Vganancia": "789154",
-            "SMultiplicador": "True",
-            "juego":
-                {
-                 "fecha": "hoy",
-                 "Estado": "en cursoi",
-                 "Deporte": {
-                    "Nombre": "Nombre_equipo",
-                    "equipo": [
+
+    "Usuarios": [
+      {
+        "Nombre": "Javier Osorio Insignares",
+        "Telefono": 369696969,
+        "Email": "javierinsignares@correo.com",
+        "Genero": "No binario",
+        "Nacimiento": "1999-08-26",
+        "Balance": 0.00,
+        "Apuestas":[
+           {
+              "V_E_Apuesta": "123456",
+              "Vganancia": "789154",
+              "SMultiplicador": 0,
+              "Juego":
+                  {
+                   "Fecha": "hoy",
+                   "Estado": "en cursoi",
+                   "Deporte": {
+                      "Nombre": "Nombre_equipo",
+                      "Equipo": [
+                        
+                            {
+                              "Nombre": "Equipo1"
+                            },
+                            {
+                                "Nombre": "Equipo2"
+                              },
+                              {
+                                "Nombre": "Equipo3"
+                              },
+                              {
+                                "Nombre": "Equipo4"
+                              }
+                
+                
+                      ]
                       
-                          {
-                            "Nombre": "Equipo1"
+                    },
+                   "Multiplicador": 2.4,
+                   "Equipo1": "Cacua",
+                   "Equipo2": "Elotrocacua"
+                 }
+               
+  
+            },
+            {
+              "V_E_Apuesta": "123456",
+              "Vganancia": "789154",
+              "SMultiplicador": "True",
+              "Juego":
+              {
+               "fecha": "hoy",
+               "Estado": "en cursoi",
+               "Deporte": {
+                  "Nombre": "Nombre_equipo",
+                  "Equipo": [
+                    
+                        {
+                          "Nombre": "Equipo1"
+                        },
+                        {
+                            "Nombre": "Equipo2"
                           },
                           {
-                              "Nombre": "Equipo2"
-                            },
-                            {
-                              "Nombre": "Equipo3"
-                            },
-                            {
-                              "Nombre": "Equipo4"
-                            }
-              
-              
-                    ]
+                            "Nombre": "Equipo3"
+                          },
+                          {
+                            "Nombre": "Equipo4"
+                          }
+            
+            
+                  ]
+                  
+                },
+               "Multiplicador": "2.4",
+               "Equipo1": "Cacua",
+               "Equipo2": "Elotrocacua"
+             }
+            },
+            {
+              "V_E_Apuesta": "123456",
+              "Vganancia": "789154",
+              "SMultiplicador": "True",
+              "Juego":
+              {
+               "fecha": "hoy",
+               "Estado": "en cursoi",
+               "Deporte": {
+                  "Nombre": "Nombre_equipo",
+                  "Equipo": [
                     
-                  },
-                 "Multiplicador": "2.4",
-                 "Equipo1": "Cacua",
-                 "Equipo2": "Elotrocacua"
-               }
-             
-
-          },
-          {
-            "V_E_Apuesta": "123456",
-            "Vganancia": "789154",
-            "SMultiplicador": "True",
-            "juego":
-            {
-             "fecha": "hoy",
-             "Estado": "en cursoi",
-             "Deporte": {
-                "Nombre": "Nombre_equipo",
-                "equipo": [
+                        {
+                          "Nombre": "Equipo1"
+                        },
+                        {
+                            "Nombre": "Equipo2"
+                          },
+                          {
+                            "Nombre": "Equipo3"
+                          },
+                          {
+                            "Nombre": "Equipo4"
+                          }
+            
+            
+                  ]
                   
-                      {
-                        "Nombre": "Equipo1"
-                      },
-                      {
-                          "Nombre": "Equipo2"
-                        },
-                        {
-                          "Nombre": "Equipo3"
-                        },
-                        {
-                          "Nombre": "Equipo4"
-                        }
-          
-          
-                ]
-                
-              },
-             "Multiplicador": "2.4",
-             "Equipo1": "Cacua",
-             "Equipo2": "Elotrocacua"
-           }
-          },
-          {
-            "V_E_Apuesta": "123456",
-            "Vganancia": "789154",
-            "SMultiplicador": "True",
-            "juego":
+                },
+               "Multiplicador": "2.4",
+               "Equipo1": "Cacua",
+               "Equipo2": "Elotrocacua"
+             }
+            },
             {
-             "fecha": "hoy",
-             "Estado": "en cursoi",
-             "Deporte": {
-                "Nombre": "Nombre_equipo",
-                "equipo": [
+              "V_E_Apuesta": "123456",
+              "Vganancia": "789154",
+              "SMultiplicador": "True",
+              "Juego":
+              {
+               "Fecha": "hoy",
+               "Estado": "en cursoi",
+               "Deporte": {
+                  "Nombre": "Nombre_equipo",
+                  "Equipo": [
+                    
+                        {
+                          "Nombre": "Equipo1"
+                        },
+                        {
+                            "Nombre": "Equipo2"
+                          },
+                          {
+                            "Nombre": "Equipo3"
+                          },
+                          {
+                            "Nombre": "Equipo4"
+                          }
+            
+            
+                  ]
                   
-                      {
-                        "Nombre": "Equipo1"
-                      },
-                      {
-                          "Nombre": "Equipo2"
-                        },
-                        {
-                          "Nombre": "Equipo3"
-                        },
-                        {
-                          "Nombre": "Equipo4"
-                        }
-          
-          
-                ]
-                
-              },
-             "Multiplicador": "2.4",
-             "Equipo1": "Cacua",
-             "Equipo2": "Elotrocacua"
-           }
-          },
-          {
-            "V_E_Apuesta": "123456",
-            "Vganancia": "789154",
-            "SMultiplicador": "True",
-            "juego":
+                },
+               "Multiplicador": "2.4",
+               "Equipo1": "Cacua",
+               "Equipo2": "Elotrocacua"
+             }
+            },
             {
-             "fecha": "hoy",
-             "Estado": "en cursoi",
-             "Deporte": {
-                "Nombre": "Nombre_equipo",
-                "equipo": [
+              "V_E_Apuesta": "123456",
+              "Vganancia": "789154",
+              "SMultiplicador": "True",
+              "Juego":
+              {
+               "Fecha": "hoy",
+               "Estado": "en cursoi",
+               "Deporte":  {
+                  "Nombre": "Nombre_equipo",
+                  "Equipo": [
+                    
+                        {
+                          "Nombre": "Equipo1"
+                        },
+                        {
+                            "Nombre": "Equipo2"
+                          },
+                          {
+                            "Nombre": "Equipo3"
+                          },
+                          {
+                            "Nombre": "Equipo4"
+                          }
+            
+            
+                  ]
                   
-                      {
-                        "Nombre": "Equipo1"
-                      },
-                      {
-                          "Nombre": "Equipo2"
-                        },
-                        {
-                          "Nombre": "Equipo3"
-                        },
-                        {
-                          "Nombre": "Equipo4"
-                        }
-          
-          
-                ]
-                
-              },
-             "Multiplicador": "2.4",
-             "Equipo1": "Cacua",
-             "Equipo2": "Elotrocacua"
-           }
-          },
-          {
-            "V_E_Apuesta": "123456",
-            "Vganancia": "789154",
-            "SMultiplicador": "True",
-            "juego":
-            {
-             "fecha": "hoy",
-             "Estado": "en cursoi",
-             "Deporte":  {
-                "Nombre": "Nombre_equipo",
-                "equipo": [
-                  
-                      {
-                        "Nombre": "Equipo1"
-                      },
-                      {
-                          "Nombre": "Equipo2"
-                        },
-                        {
-                          "Nombre": "Equipo3"
-                        },
-                        {
-                          "Nombre": "Equipo4"
-                        }
-          
-          
-                ]
-                
-              },
-             "Multiplicador": "2.4",
-             "Equipo1": "Cacua",
-             "Equipo2": "Elotrocacua"
-           }
-          }
-
-      ]
-    }
+                },
+               "Multiplicador": "2.4",
+               "Equipo1": "Cacua",
+               "Equipo2": "Elotrocacua"
+             }
+            }
+  
+        ]
+      }
+    ]
   }
