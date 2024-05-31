@@ -1,188 +1,159 @@
 {
-
-    "Usuarios": [
-      {
-        "Nombre": "Javier Osorio Insignares",
-        "Telefono": 369696969,
-        "Email": "javierinsignares@correo.com",
-        "Genero": "No binario",
-        "Nacimiento": "1999-08-26",
-        "Balance": 0.00,
-        "Apuestas":[
-           {
-              "V_E_Apuesta": "123456",
-              "Vganancia": "789154",
-              "SMultiplicador": 0,
-              "Juego":
-                  {
-                   "Fecha": "hoy",
-                   "Estado": "en cursoi",
-                   "Deporte": {
-                      "Nombre": "Nombre_equipo",
-                      "Equipo": [
-                        
-                            {
-                              "Nombre": "Equipo1"
-                            },
-                            {
-                                "Nombre": "Equipo2"
-                              },
-                              {
-                                "Nombre": "Equipo3"
-                              },
-                              {
-                                "Nombre": "Equipo4"
-                              }
-                
-                
-                      ]
-                      
-                    },
-                   "Multiplicador": 2.4,
-                   "Equipo1": "Cacua",
-                   "Equipo2": "Elotrocacua"
-                 }
-               
-  
-            },
-            {
-              "V_E_Apuesta": "123456",
-              "Vganancia": "789154",
-              "SMultiplicador": "True",
-              "Juego":
-              {
-               "fecha": "hoy",
-               "Estado": "en cursoi",
-               "Deporte": {
-                  "Nombre": "Nombre_equipo",
-                  "Equipo": [
-                    
-                        {
-                          "Nombre": "Equipo1"
+    "usuarios": [
+        {
+            "nombre": "Javier Osorio Insignares",
+            "telefono": 369696969,
+            "email": "javierinsignares@correo.com",
+            "genero": "No binario",
+            "nacimiento": "1999-08-26",
+            "balance": 0.00,
+            "apuestas": [
+                {
+                    "v_e_apuesta": "123456",
+                    "vganancia": "789154",
+                    "smultiplicador": 0,
+                    "juego": {
+                        "fecha": "hoy",
+                        "estado": "en cursoi",
+                        "deporte": {
+                            "nombre": "Nombre_equipo",
+                            "equipo": [
+                                {
+                                    "nombre": "Equipo1"
+                                },
+                                {
+                                    "nombre": "Equipo2"
+                                },
+                                {
+                                    "nombre": "Equipo3"
+                                },
+                                {
+                                    "nombre": "Equipo4"
+                                }
+                            ]
                         },
-                        {
-                            "Nombre": "Equipo2"
-                          },
-                          {
-                            "Nombre": "Equipo3"
-                          },
-                          {
-                            "Nombre": "Equipo4"
-                          }
-            
-            
-                  ]
-                  
+                        "multiplicador": 2.4,
+                        "equipo1": "Cacua",
+                        "equipo2": "Elotrocacua"
+                    }
                 },
-               "Multiplicador": "2.4",
-               "Equipo1": "Cacua",
-               "Equipo2": "Elotrocacua"
-             }
-            },
-            {
-              "V_E_Apuesta": "123456",
-              "Vganancia": "789154",
-              "SMultiplicador": "True",
-              "Juego":
-              {
-               "fecha": "hoy",
-               "Estado": "en cursoi",
-               "Deporte": {
-                  "Nombre": "Nombre_equipo",
-                  "Equipo": [
-                    
-                        {
-                          "Nombre": "Equipo1"
+                {
+                    "v_e_apuesta": "123456",
+                    "vganancia": "789154",
+                    "smultiplicador": "True",
+                    "juego": {
+                        "fecha": "hoy",
+                        "estado": "en cursoi",
+                        "deporte": {
+                            "nombre": "Nombre_equipo",
+                            "equipo": [
+                                {
+                                    "nombre": "Equipo1"
+                                },
+                                {
+                                    "nombre": "Equipo2"
+                                },
+                                {
+                                    "nombre": "Equipo3"
+                                },
+                                {
+                                    "nombre": "Equipo4"
+                                }
+                            ]
                         },
-                        {
-                            "Nombre": "Equipo2"
-                          },
-                          {
-                            "Nombre": "Equipo3"
-                          },
-                          {
-                            "Nombre": "Equipo4"
-                          }
-            
-            
-                  ]
-                  
+                        "multiplicador": "2.4",
+                        "equipo1": "Cacua",
+                        "equipo2": "Elotrocacua"
+                    }
                 },
-               "Multiplicador": "2.4",
-               "Equipo1": "Cacua",
-               "Equipo2": "Elotrocacua"
-             }
-            },
-            {
-              "V_E_Apuesta": "123456",
-              "Vganancia": "789154",
-              "SMultiplicador": "True",
-              "Juego":
-              {
-               "Fecha": "hoy",
-               "Estado": "en cursoi",
-               "Deporte": {
-                  "Nombre": "Nombre_equipo",
-                  "Equipo": [
-                    
-                        {
-                          "Nombre": "Equipo1"
+                {
+                    "v_e_apuesta": "123456",
+                    "vganancia": "789154",
+                    "smultiplicador": "True",
+                    "juego": {
+                        "fecha": "hoy",
+                        "estado": "en cursoi",
+                        "deporte": {
+                            "nombre": "Nombre_equipo",
+                            "equipo": [
+                                {
+                                    "nombre": "Equipo1"
+                                },
+                                {
+                                    "nombre": "Equipo2"
+                                },
+                                {
+                                    "nombre": "Equipo3"
+                                },
+                                {
+                                    "nombre": "Equipo4"
+                                }
+                            ]
                         },
-                        {
-                            "Nombre": "Equipo2"
-                          },
-                          {
-                            "Nombre": "Equipo3"
-                          },
-                          {
-                            "Nombre": "Equipo4"
-                          }
-            
-            
-                  ]
-                  
+                        "multiplicador": "2.4",
+                        "equipo1": "Cacua",
+                        "equipo2": "Elotrocacua"
+                    }
                 },
-               "Multiplicador": "2.4",
-               "Equipo1": "Cacua",
-               "Equipo2": "Elotrocacua"
-             }
-            },
-            {
-              "V_E_Apuesta": "123456",
-              "Vganancia": "789154",
-              "SMultiplicador": "True",
-              "Juego":
-              {
-               "Fecha": "hoy",
-               "Estado": "en cursoi",
-               "Deporte":  {
-                  "Nombre": "Nombre_equipo",
-                  "Equipo": [
-                    
-                        {
-                          "Nombre": "Equipo1"
+                {
+                    "v_e_apuesta": "123456",
+                    "vganancia": "789154",
+                    "smultiplicador": "True",
+                    "juego": {
+                        "fecha": "hoy",
+                        "estado": "en cursoi",
+                        "deporte": {
+                            "nombre": "Nombre_equipo",
+                            "equipo": [
+                                {
+                                    "nombre": "Equipo1"
+                                },
+                                {
+                                    "nombre": "Equipo2"
+                                },
+                                {
+                                    "nombre": "Equipo3"
+                                },
+                                {
+                                    "nombre": "Equipo4"
+                                }
+                            ]
                         },
-                        {
-                            "Nombre": "Equipo2"
-                          },
-                          {
-                            "Nombre": "Equipo3"
-                          },
-                          {
-                            "Nombre": "Equipo4"
-                          }
-            
-            
-                  ]
-                  
+                        "multiplicador": "2.4",
+                        "equipo1": "Cacua",
+                        "equipo2": "Elotrocacua"
+                    }
                 },
-               "Multiplicador": "2.4",
-               "Equipo1": "Cacua",
-               "Equipo2": "Elotrocacua"
-             }
-            }
-  
-        ]
-      }
+                {
+                    "v_e_apuesta": "123456",
+                    "vganancia": "789154",
+                    "smultiplicador": "True",
+                    "juego": {
+                        "fecha": "hoy",
+                        "estado": "en cursoi",
+                        "deporte": {
+                            "nombre": "Nombre_equipo",
+                            "equipo": [
+                                {
+                                    "nombre": "Equipo1"
+                                },
+                                {
+                                    "nombre": "Equipo2"
+                                },
+                                {
+                                    "nombre": "Equipo3"
+                                },
+                                {
+                                    "nombre": "Equipo4"
+                                }
+                            ]
+                        },
+                        "multiplicador": "2.4",
+                        "equipo1": "Cacua",
+                        "equipo2": "Elotrocacua"
+                    }
+                }
+            ]
+        }
     ]
-  }
+}
