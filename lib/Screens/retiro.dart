@@ -21,7 +21,7 @@ class _RetiroState extends State<Retiro> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-             Center( // Centra el texto en el eje horizontal
+             Center( 
             child: Text(
               "Depositar",
               style: TextStyle(
