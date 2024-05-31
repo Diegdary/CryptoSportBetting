@@ -92,6 +92,10 @@ class _RetirorealState extends State<Retiroreal> {
                     ),
                     child: Center(
                       child: TextField(
+                        keyboardType: TextInputType.number,
+                        inputFormatters: [
+                          FilteringTextInputFormatter.digitsOnly
+                        ],
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 16,
