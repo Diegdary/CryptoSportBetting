@@ -1,11 +1,16 @@
-import 'package:apuestas/Screens/Register.dart';
+import 'package:apuestas/Screens/Login.dart';
 import 'package:flutter/material.dart';
-import 'package:apuestas/Screens/Home.dart';
 
-class Login extends StatelessWidget {
-  const Login({super.key, required this.title});
-  static const String routName = "Login";
-  final String title;
+class Register extends StatefulWidget {
+  const Register({super.key});
+  static const String routName = "Register";
+
+  @override
+  State<Register> createState() => _RegisterState();
+}
+
+class _RegisterState extends State<Register> {
+  TextEditingController _dateController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -38,18 +43,11 @@ class Login extends StatelessWidget {
                       Container(
                         margin: EdgeInsets.fromLTRB(0, 55.0, 0, 0),
                         child: const Text(
-                          "Bienvenido",
+                          "Registrate!",
                           style: TextStyle(
                               color: Colors.white,
                               fontSize: 30.0,
                               fontWeight: FontWeight.bold),
-                        ),
-                      ),
-                      Container(
-                        margin: EdgeInsets.fromLTRB(0, 30.0, 0, 0),
-                        child: const Image(
-                          image: AssetImage('assets/login.png'),
-                          width: 250.0,
                         ),
                       ),
                       Container(
@@ -58,6 +56,71 @@ class Login extends StatelessWidget {
                           style: TextStyle(color: Colors.white),
                           decoration: const InputDecoration(
                               labelText: "Nombre de usuario",
+                              enabledBorder: UnderlineInputBorder(
+                                  borderSide:
+                                      BorderSide(color: Color(0xFFFFFFFF))),
+                              labelStyle: TextStyle(color: Colors.white)),
+                        ),
+                      ),
+                      Container(
+                        width: 300.0,
+                        child: TextFormField(
+                          style: TextStyle(color: Colors.white),
+                          decoration: const InputDecoration(
+                              labelText: "E-mail",
+                              enabledBorder: UnderlineInputBorder(
+                                  borderSide:
+                                      BorderSide(color: Color(0xFFFFFFFF))),
+                              labelStyle: TextStyle(color: Colors.white)),
+                        ),
+                      ),
+                      Container(
+                        width: 300.0,
+                        child: TextFormField(
+                          style: TextStyle(color: Colors.white),
+                          decoration: const InputDecoration(
+                              labelText: "Telefono",
+                              enabledBorder: UnderlineInputBorder(
+                                  borderSide:
+                                      BorderSide(color: Color(0xFFFFFFFF))),
+                              labelStyle: TextStyle(color: Colors.white)),
+                        ),
+                      ),
+                      Container(
+                        width: 300.0,
+                        child: TextFormField(
+                          style: TextStyle(color: Colors.white),
+                          decoration: const InputDecoration(
+                              labelText: "Genero",
+                              enabledBorder: UnderlineInputBorder(
+                                  borderSide:
+                                      BorderSide(color: Color(0xFFFFFFFF))),
+                              labelStyle: TextStyle(color: Colors.white)),
+                        ),
+                      ),
+                      Container(
+                        width: 300.0,
+                        child: TextFormField(
+                          controller: _dateController,
+                          style: TextStyle(color: Colors.white),
+                          decoration: const InputDecoration(
+                              labelText: "Fecha",
+                              enabledBorder: UnderlineInputBorder(
+                                  borderSide:
+                                      BorderSide(color: Color(0xFFFFFFFF))),
+                              labelStyle: TextStyle(color: Colors.white)),
+                          readOnly: true,
+                          onTap: () {
+                            _selectDate();
+                          },
+                        ),
+                      ),
+                      Container(
+                        width: 300.0,
+                        child: TextFormField(
+                          style: TextStyle(color: Colors.white),
+                          decoration: const InputDecoration(
+                              labelText: "Balance",
                               enabledBorder: UnderlineInputBorder(
                                   borderSide:
                                       BorderSide(color: Color(0xFFFFFFFF))),
@@ -90,13 +153,12 @@ class Login extends StatelessWidget {
                             )),
                         child: ElevatedButton(
                           onPressed: () {
-                            Navigator.pushReplacementNamed(
-                                context, Home.routname);
+                            ////
                           },
                           style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.transparent,
                               shadowColor: Colors.transparent),
-                          child: const Text("Iniciar sesión",
+                          child: const Text("Registrarme!",
                               style: TextStyle(fontSize: 16)),
                         ),
                       ),
@@ -105,9 +167,9 @@ class Login extends StatelessWidget {
                         child: ElevatedButton(
                           onPressed: () {
                             Navigator.pushReplacementNamed(
-                                context, Register.routName);
+                                context, Login.routName);
                           },
-                          child: Text("Register"),
+                          child: Text("Iniciar Sesion"),
                           style: ElevatedButton.styleFrom(
                               backgroundColor: Color(0x00FFFFFF)),
                         ),
@@ -128,5 +190,19 @@ class Login extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  Future<void> _selectDate() async {
+    DateTime? _picked = await showDatePicker(
+        context: context,
+        initialDate: DateTime.now(),
+        firstDate: DateTime(2000),
+        lastDate: DateTime(2100));
+
+    if (_picked != null) {
+      setState(() {
+        _dateController.text = _picked.toString().split(" ")[0];
+      });
+    }
   }
 }
