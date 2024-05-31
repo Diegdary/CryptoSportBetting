@@ -80,7 +80,7 @@ class Wall extends StatelessWidget {
                               top: Radius.circular(20),
                             ),
                           ),
-                          builder: (context) => retiro(),
+                          builder: (context) => Retiro(),
                         );
                       },
                       style: ElevatedButton.styleFrom(
