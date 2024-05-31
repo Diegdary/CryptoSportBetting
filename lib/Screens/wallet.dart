@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'retiro.dart';
 import 'retiroreal.dart';
+
 class Wall extends StatelessWidget {
   const Wall({Key? key}) : super(key: key);
 
@@ -41,31 +42,32 @@ class Wall extends StatelessWidget {
                   ),
                   Spacer(),
                   Container(
-                      child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        'Balance: \$10.00',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'Balance: \$10.00',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 24,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
-                      ),
-                      SizedBox(
-                        width: 20,
-                      ),
-                      Container(
-                        width: 30,
-                        height: 30,
-                        child: Image.asset('assets/token.png'),
-                      )
-                    ],
-                  )),
-                  Spacer(),
+                        SizedBox(
+                          width: 20,
+                        ),
+                        Image.asset(
+                          'assets/token.png',
+                          height: MediaQuery.of(context).size.height * 0.06,
+                          width: MediaQuery.of(context).size.width * 0.08,
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(height: 40),
                   Container(
-                    height: 50.0,
-                    width: 300.0,
+                    height: MediaQuery.of(context).size.height* 0.1,
+                    width: MediaQuery.of(context).size.width * 0.7, // 10% del ancho de la pantalla
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.all(Radius.circular(50)),
                     ),
@@ -74,28 +76,30 @@ class Wall extends StatelessWidget {
                         context: context,
                         isScrollControlled: true,
                         enableDrag: true,
-                        backgroundColor:
-                                    Color.fromARGB(255, 44, 58, 106), //aqui
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.vertical(
-                                      top: Radius.circular(20)),
-                                ),
-                                builder: (context) => retiro(),
+                        backgroundColor: Color.fromARGB(255, 44, 58, 106),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.vertical(
+                            top: Radius.circular(20),
+                          ),
+                        ),
+                        builder: (context) => retiro(),
                       ),
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Color.fromARGB(255, 1, 29, 101),
                       ),
-                      child: Text("Depósito",
-                          style: TextStyle(
-                            fontSize: 23,
-                            color:  Color.fromARGB(255, 135, 251, 242),
-                          )),
+                      child: Text(
+                        "Depósitar",
+                        style: TextStyle(
+                          fontSize: 23,
+                          color: Color.fromARGB(255, 135, 251, 242),
+                        ),
+                      ),
                     ),
                   ),
                   SizedBox(height: 10),
                   Container(
-                    height: 50.0,
-                    width: 300.0,
+                    height: MediaQuery.of(context).size.height* 0.1,
+                    width: MediaQuery.of(context).size.width * 0.7, // 10% del ancho de la pantalla
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.all(Radius.circular(50)),
                     ),
@@ -104,22 +108,24 @@ class Wall extends StatelessWidget {
                         context: context,
                         isScrollControlled: true,
                         enableDrag: true,
-                        backgroundColor:
-                                    Color.fromARGB(255, 44, 58, 106), //aqui
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.vertical(
-                                      top: Radius.circular(20)),
-                                ),
-                                builder: (context) => retiroreal(),
+                        backgroundColor: Color.fromARGB(255, 44, 58, 106),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.vertical(
+                            top: Radius.circular(20),
+                          ),
+                        ),
+                        builder: (context) => retiroreal(),
                       ),
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Color.fromARGB(255, 1, 29, 101),
                       ),
-                      child: Text("Retiro",
-                          style: TextStyle(
-                            fontSize: 23,
-                            color:  Color.fromARGB(255, 135, 251, 242),
-                          )),
+                      child: Text(
+                        "Retirar",
+                        style: TextStyle(
+                          fontSize: 23,
+                          color: Color.fromARGB(255, 135, 251, 242),
+                        ),
+                      ),
                     ),
                   ),
                   Spacer(flex: 2),
