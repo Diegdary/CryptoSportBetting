@@ -29,7 +29,7 @@ class Wall extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Padding(
-                    padding: const EdgeInsets.all(16.0),
+                    padding: const EdgeInsets.all(26.0),
                     child: Text(
                       'Billetera',
                       style: TextStyle(
@@ -64,33 +64,36 @@ class Wall extends StatelessWidget {
                       ],
                     ),
                   ),
-                  SizedBox(height: 40),
+                  SizedBox(height: 30,),
                   Container(
-                    height: MediaQuery.of(context).size.height* 0.1,
-                    width: MediaQuery.of(context).size.width * 0.7, // 10% del ancho de la pantalla
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(50)),
-                    ),
+                    height: MediaQuery.of(context).size.height * 0.1,
+                    width: MediaQuery.of(context).size.width * 0.8,
                     child: ElevatedButton(
-                      onPressed: () => showModalBottomSheet(
-                        context: context,
-                        isScrollControlled: true,
-                        enableDrag: true,
-                        backgroundColor: Color.fromARGB(255, 44, 58, 106),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.vertical(
-                            top: Radius.circular(20),
+                      onPressed: () {
+                         showModalBottomSheet(
+                          context: context,
+                          isScrollControlled: true,
+                          enableDrag: true,
+                          backgroundColor: Color.fromARGB(255, 24,41,81),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.vertical(
+                              top: Radius.circular(20),
+                            ),
                           ),
-                        ),
-                        builder: (context) => retiro(),
-                      ),
+                          builder: (context) => retiro(),
+                        );
+                      },
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Color.fromARGB(255, 1, 29, 101),
+                        backgroundColor: Color.fromARGB(255, 24,41,81),
+                        alignment: Alignment.centerLeft,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10), 
+                        ),
                       ),
                       child: Text(
                         "Depósitar",
                         style: TextStyle(
-                          fontSize: 23,
+                          fontSize: 16,
                           color: Color.fromARGB(255, 135, 251, 242),
                         ),
                       ),
@@ -98,31 +101,34 @@ class Wall extends StatelessWidget {
                   ),
                   SizedBox(height: 10),
                   Container(
-                    height: MediaQuery.of(context).size.height* 0.1,
-                    width: MediaQuery.of(context).size.width * 0.7, // 10% del ancho de la pantalla
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(50)),
-                    ),
+                    height: MediaQuery.of(context).size.height * 0.1,
+                    width: MediaQuery.of(context).size.width * 0.8, 
                     child: ElevatedButton(
-                      onPressed: () => showModalBottomSheet(
-                        context: context,
-                        isScrollControlled: true,
-                        enableDrag: true,
-                        backgroundColor: Color.fromARGB(255, 44, 58, 106),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.vertical(
-                            top: Radius.circular(20),
+                      onPressed: () {
+                      showModalBottomSheet(
+                          context: context,
+                          isScrollControlled: true,
+                          enableDrag: true,
+                          backgroundColor: Color.fromARGB(255, 24,41,81),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.vertical(
+                              top: Radius.circular(20),
+                            ),
                           ),
-                        ),
-                        builder: (context) => retiroreal(),
-                      ),
+                          builder: (context) => retiroreal(),
+                        );
+                      },
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Color.fromARGB(255, 1, 29, 101),
+                        backgroundColor: Color.fromARGB(255, 24,41,81),
+                        alignment: Alignment.centerLeft,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10),
+                        ),
                       ),
                       child: Text(
                         "Retirar",
                         style: TextStyle(
-                          fontSize: 23,
+                          fontSize: 16,
                           color: Color.fromARGB(255, 135, 251, 242),
                         ),
                       ),
