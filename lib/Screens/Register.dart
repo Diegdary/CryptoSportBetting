@@ -118,18 +118,6 @@ class _RegisterState extends State<Register> {
                       Container(
                         width: 300.0,
                         child: TextFormField(
-                          style: TextStyle(color: Colors.white),
-                          decoration: const InputDecoration(
-                              labelText: "Balance",
-                              enabledBorder: UnderlineInputBorder(
-                                  borderSide:
-                                      BorderSide(color: Color(0xFFFFFFFF))),
-                              labelStyle: TextStyle(color: Colors.white)),
-                        ),
-                      ),
-                      Container(
-                        width: 300.0,
-                        child: TextFormField(
                           obscureText: true,
                           style: TextStyle(color: Colors.white),
                           decoration: const InputDecoration(
