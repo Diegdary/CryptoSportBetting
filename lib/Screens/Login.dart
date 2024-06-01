@@ -31,9 +31,8 @@ class _LoginState extends State<Login> {
       },
       child: Scaffold(
         body: Container(
-          child: SingleChildScrollView(
-            child: Container(
-              decoration: const BoxDecoration(
+          height: MediaQuery.of(context).size.height,
+          decoration: const BoxDecoration(
                 gradient: LinearGradient(
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
@@ -43,6 +42,9 @@ class _LoginState extends State<Login> {
                   ],
                 ),
               ),
+          child: SingleChildScrollView(
+            child: Container(
+              
               child: Center(
                 child: Container(
                   margin: EdgeInsets.only(
