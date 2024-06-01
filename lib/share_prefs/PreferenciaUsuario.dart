@@ -35,4 +35,7 @@ class PreferenciaUsuario {
 
   String get gNacimiento => _prefs.getString('Nacimiento') ?? "r";
   set sNacimiento(String value) => _prefs.setString('Nacimiento', value);
+
+  int get gID => _prefs.getInt('id') ?? 0;
+  set sID(int value) => _prefs.setInt('id', value);
 }

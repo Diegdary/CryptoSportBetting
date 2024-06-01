@@ -120,11 +120,6 @@ class _LoginState extends State<Login> {
                         child: ElevatedButton(
                           onPressed: () {
                             for (var i = 0; i < usersList.length; i++) {
-                              print(usersList[i]["nombre"]);
-                              print(userController.text);
-                              print(usersList[i]["password"]);
-                              print(passwordController.text);
-
                               if (userController.text ==
                                       usersList[i]["nombre"] &&
                                   passwordController.text ==
@@ -136,6 +131,7 @@ class _LoginState extends State<Login> {
                                 pref.sEmail = usuario.email;
                                 pref.sTelefono = usuario.telefono;
                                 pref.sGenero = usuario.genero;
+                                pref.sID = i;
 
                                 Navigator.pushReplacementNamed(
                                     context, Home.routname);

@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'History.dart';
 import 'package:apuestas/share_prefs/PreferenciaUsuario.dart';
@@ -171,7 +173,9 @@ class _ProfScreenState extends State<ProfScreen> {
                                   ],
                                 )),
                             child: ElevatedButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                exit(0);
+                              },
                               style: ElevatedButton.styleFrom(
                                   backgroundColor: Colors.transparent,
                                   shadowColor: Colors.transparent),

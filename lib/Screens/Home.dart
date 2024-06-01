@@ -45,46 +45,43 @@ class _HomeState extends State<Home> {
     }
   }
 
- OverlayEntry _createOverlayEntry(BuildContext context) {
-  return OverlayEntry(
-    builder: (BuildContext context) => GestureDetector(
-      onTap: () {
-        // Cierra el overlay cuando se toca fuera de 'betscreen'
-        _toggleOverlay(context);
-      },
-      behavior: HitTestBehavior.translucent,
-      child: Container(
-        color: Colors.transparent,
-        child: Align(
-          alignment: Alignment.bottomCenter,
-          child: GestureDetector(
-            onTap:
-                () {}, // Evita que los toques dentro de 'betscreen' cierren el overlay
-            child: Material(
-              color: Colors.transparent,
-              child: Container(
-                width: MediaQuery.of(context).size.width * 0.9,
-                height: MediaQuery.of(context).size.height * 0.9,
-                decoration: const BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                    colors: [
-                      Color.fromARGB(255, 44, 58, 106),
-                      Color.fromARGB(255, 12, 13, 52),
-                    ],
+  OverlayEntry _createOverlayEntry(BuildContext context) {
+    return OverlayEntry(
+      builder: (BuildContext context) => GestureDetector(
+        onTap: () {
+          _toggleOverlay(context);
+        },
+        behavior: HitTestBehavior.translucent,
+        child: Container(
+          color: Colors.transparent,
+          child: Align(
+            alignment: Alignment.bottomCenter,
+            child: GestureDetector(
+              onTap: () {},
+              child: Material(
+                color: Colors.transparent,
+                child: Container(
+                  width: MediaQuery.of(context).size.width * 0.9,
+                  height: MediaQuery.of(context).size.height * 0.9,
+                  decoration: const BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [
+                        Color.fromARGB(255, 44, 58, 106),
+                        Color.fromARGB(255, 12, 13, 52),
+                      ],
+                    ),
                   ),
+                  child: BestScreen(),
                 ),
-                child: BestScreen(),
               ),
             ),
           ),
         ),
       ),
-    ),
-  );
-}
-
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -150,12 +147,10 @@ class _HomeState extends State<Home> {
   }) {
     return Expanded(
       child: Material(
-        color:
-            Colors.transparent, // Asegúrate de que el Material sea transparente
+        color: Colors.transparent,
         child: InkWell(
           onTap: () => _onItemTapped(index),
-          borderRadius:
-              BorderRadius.circular(35), // Radio de la sombra redondeada
+          borderRadius: BorderRadius.circular(35),
           child: Container(
             height: 90,
             child: Column(
@@ -167,10 +162,8 @@ class _HomeState extends State<Home> {
               ],
             ),
           ),
-          splashColor: Color.fromARGB(255, 61, 43, 228)
-              .withOpacity(0.2), // Color de la onda al presionar
-          highlightColor: Color.fromARGB(255, 7, 32, 255)
-              .withOpacity(0.1), // Color de la sombra al presionar
+          splashColor: Color.fromARGB(255, 61, 43, 228).withOpacity(0.2),
+          highlightColor: Color.fromARGB(255, 7, 32, 255).withOpacity(0.1),
         ),
       ),
     );
